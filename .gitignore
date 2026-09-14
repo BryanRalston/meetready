@@ -1,0 +1,12 @@
+node_modules
+dist
+.output
+.tanstack
+.vercel
+.nitro
+*.log
+.DS_Store
+.grok/skills/
+.grok/references/
+public/__grok/
+screenshots/app-builder-*

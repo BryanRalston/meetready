@@ -1,0 +1,818 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-14",
+  "disclaimer": "Coach owns technique and level placement. MeetReady tracks the household plan. Mobility and special requirements follow USAG 2026–27 Rules & Policies, 2021–2029 DP compulsories (L1–5), 2026–2030 DP Optional Code (L6–10), and 2022–2028 Xcel Code. State qualifier scores are not national mobility.",
+  "subscription": {
+    "yearly": { "price": 49.99, "label": "$0.14/day", "badge": "BEST VALUE" },
+    "monthly": { "price": 9.99 },
+    "season": { "price": 29.99, "months": 4 },
+    "closePathTrialDays": 7,
+    "householdGymnasts": true
+  },
+  "sharedChips": [
+    { "id": "consistent", "label": "She's consistent on the required stuff" },
+    { "id": "unsure", "label": "I'm not sure — coach hasn't broken it down" },
+    { "id": "freeze", "label": "Fear / freeze after a fall" }
+  ],
+  "events": ["vault", "bars", "beam", "floor", "awards", "wait"],
+  "seasonMoments": [
+    { "id": "first_meet", "label": "First meet coming up" },
+    { "id": "mid_season", "label": "Mid-season, scores bouncing" },
+    { "id": "qualifying", "label": "Chasing state / regional" },
+    { "id": "move_up", "label": "Deciding whether to move up" },
+    { "id": "recruiting", "label": "College / recruiting", "minLevel": 8, "programs": ["dp"] }
+  ],
+  "programs": [
+    {
+      "id": "dp",
+      "label": "Development Program (JO / DP)",
+      "levels": ["dp_1", "dp_2", "dp_3", "dp_4", "dp_5", "dp_6", "dp_7", "dp_8", "dp_9", "dp_10"]
+    },
+    {
+      "id": "xcel",
+      "label": "Xcel",
+      "levels": ["xcel_bronze", "xcel_silver", "xcel_gold", "xcel_platinum", "xcel_diamond", "xcel_sapphire"]
+    },
+    {
+      "id": "preteam",
+      "label": "Not sure / in-house only",
+      "levels": ["preteam"]
+    }
+  ],
+  "packs": {
+    "dp_1": {
+      "id": "dp_1",
+      "program": "dp",
+      "track": "developmental",
+      "label": "Level 1",
+      "shortLabel": "L1",
+      "minAge": 4,
+      "helper": "Developmental. Often in-house. No mobility score.",
+      "codeCycle": "2021-2029 compulsory",
+      "ship": "stub",
+      "mobility": {
+        "aa": null,
+        "ies": null,
+        "note": "No USAG mobility score. Coach call only."
+      },
+      "numberThatMatters": {
+        "type": "consistency",
+        "label": "Shapes + fun, not an AA target"
+      },
+      "goals": [
+        { "id": "fun", "label": "She enjoys it and wants to stay" },
+        { "id": "shapes", "label": "Clean basic shapes" },
+        { "id": "next", "label": "Look ready for Level 2" }
+      ],
+      "proofLine": "Levels 1–3 have no mobility score. Readiness is skills + coach call.",
+      "paywallHeadline": "{name}'s Level 1 plan is ready",
+      "chips": {
+        "vault": ["Run / hurdle", "Stretch jump onto mat", "Tight body on landing"],
+        "bars": ["Pullover", "Cast", "Back hip circle", "Low-bar dismount"],
+        "beam": ["Mount", "Holds / poses", "Straight jump", "Dismount"],
+        "floor": ["Forward roll", "Cartwheel", "Split shapes", "Handstand prep"]
+      }
+    },
+    "dp_2": {
+      "id": "dp_2",
+      "program": "dp",
+      "track": "developmental",
+      "label": "Level 2",
+      "shortLabel": "L2",
+      "minAge": 5,
+      "helper": "Developmental. No mobility score.",
+      "codeCycle": "2021-2029 compulsory",
+      "ship": "stub",
+      "mobility": {
+        "aa": null,
+        "ies": null,
+        "note": "No USAG mobility score. Coach call only."
+      },
+      "numberThatMatters": {
+        "type": "consistency",
+        "label": "Shapes + connections, not an AA target"
+      },
+      "goals": [
+        { "id": "fun", "label": "She enjoys it and wants to stay" },
+        { "id": "first_meet", "label": "Get through a first in-house or sanctioned meet" },
+        { "id": "next", "label": "Look ready for Level 3" }
+      ],
+      "proofLine": "Levels 1–3 have no mobility score. Readiness is skills + coach call.",
+      "paywallHeadline": "{name}'s Level 2 plan is ready",
+      "chips": {
+        "vault": ["Run / hurdle", "Jump to handstand, fall to back", "Straight handstand shape"],
+        "bars": ["Glide swing", "Pullover", "Cast", "Back hip circle", "Underswing dismount"],
+        "beam": ["Holds", "Cartwheel", "Jumps", "Dismount"],
+        "floor": ["Handstand", "Bridge kickover prep", "Leap", "Backward roll"]
+      }
+    },
+    "dp_3": {
+      "id": "dp_3",
+      "program": "dp",
+      "track": "developmental",
+      "label": "Level 3",
+      "shortLabel": "L3",
+      "minAge": 6,
+      "helper": "First real competitive look at many gyms. No mobility score.",
+      "codeCycle": "2021-2029 compulsory",
+      "ship": "full",
+      "mobility": {
+        "aa": null,
+        "ies": null,
+        "note": "No USAG mobility score at L1–L3. A 34+ AA is a family benchmark, not mobility."
+      },
+      "numberThatMatters": {
+        "type": "benchmark",
+        "label": "Clean-meet benchmark (not mobility)",
+        "example": "34.00 AA as a family target only"
+      },
+      "goals": [
+        { "id": "first_meet", "label": "Get through the first meet without chaos" },
+        { "id": "enjoy", "label": "She enjoys it and wants to stay" },
+        { "id": "l4_ready", "label": "Look ready for Level 4 compulsories" },
+        { "id": "stop_guessing", "label": "I stop guessing what to practice at home" }
+      ],
+      "proofLine": "No USAG mobility score at Levels 1–3. Readiness is skills + coach call.",
+      "paywallHeadline": "{name}'s Level 3 season plan is ready",
+      "chips": {
+        "vault": [
+          "Run / hurdle timing",
+          "Board punch",
+          "Tight handspring over 32–48\" stack",
+          "Stick the landing"
+        ],
+        "bars": [
+          "Glide",
+          "Pullover or kip",
+          "Cast to horizontal",
+          "Back hip circle",
+          "Front hip circle",
+          "Squat-on + stretch jump dismount"
+        ],
+        "beam": [
+          "Cross handstand to vertical",
+          "90° leap",
+          "Heel-snap 180 turn",
+          "Straight jump / jump series",
+          "Cartwheel to side HS ¼-turn dismount",
+          "She freezes"
+        ],
+        "floor": [
+          "Handstand forward roll (vertical)",
+          "Handstand–bridge–kickover",
+          "90° leap + stretch-to-split connection",
+          "Forward split",
+          "Backward roll to push-up",
+          "Round-off",
+          "Back handspring to two feet"
+        ]
+      }
+    },
+    "dp_4": {
+      "id": "dp_4",
+      "program": "dp",
+      "track": "compulsory",
+      "label": "Level 4",
+      "shortLabel": "L4",
+      "minAge": 7,
+      "helper": "First compulsory table vault. 34.00 AA to move to Level 5.",
+      "codeCycle": "2021-2029 compulsory",
+      "ship": "full",
+      "mobility": {
+        "aa": 34.0,
+        "ies": null,
+        "nextLevel": "Level 5",
+        "note": "34.00 AA at a live sanctioned meet. Two 36.00 AA scores at L4 can open a skip path toward L6 — show as a note, never a push."
+      },
+      "numberThatMatters": {
+        "type": "mobility_aa",
+        "label": "34.00 AA",
+        "target": 34.0
+      },
+      "goals": [
+        { "id": "mobility", "label": "Hit 34.00 AA for Level 5 mobility" },
+        { "id": "clean", "label": "Clean compulsory deductions" },
+        { "id": "table", "label": "Survive the first table vault season" },
+        { "id": "stop_guessing", "label": "I stop guessing what to practice at home" }
+      ],
+      "proofLine": "National mobility L4 → L5 is 34.00 AA at a live sanctioned meet.",
+      "paywallHeadline": "{name}'s Level 4 season plan is ready",
+      "chips": {
+        "vault": [
+          "Run / hurdle to the table",
+          "Board punch and block",
+          "Tight handspring over table",
+          "Coach aid (2.00 deduction, not void)"
+        ],
+        "bars": [
+          "Glide kip",
+          "Cast to horizontal",
+          "Squat-on / pike-on",
+          "Long-hang kip",
+          "Tap swing + ½-turn dismount"
+        ],
+        "beam": [
+          "Vertical handstand",
+          "120° jumps",
+          "1/1 passé turn",
+          "Jump series",
+          "Cartwheel to side-HS dismount"
+        ],
+        "floor": [
+          "Back walkover",
+          "Front handspring step-out",
+          "Round-off + 2 back handsprings",
+          "120° leap / straddle jump",
+          "1/1 turn"
+        ]
+      }
+    },
+    "dp_5": {
+      "id": "dp_5",
+      "program": "dp",
+      "track": "compulsory",
+      "label": "Level 5",
+      "shortLabel": "L5",
+      "minAge": 7,
+      "helper": "Last compulsory. 32.00 AA toward optionals. Coach aid on vault voids.",
+      "codeCycle": "2021-2029 compulsory",
+      "ship": "full",
+      "mobility": {
+        "aa": 32.0,
+        "ies": null,
+        "nextLevel": "Level 6",
+        "note": "32.00 AA at a live sanctioned meet."
+      },
+      "numberThatMatters": {
+        "type": "mobility_aa",
+        "label": "32.00 AA",
+        "target": 32.0
+      },
+      "goals": [
+        { "id": "mobility", "label": "Hit 32.00 AA toward optionals" },
+        { "id": "clean", "label": "Clean last-compulsory deductions" },
+        { "id": "decide", "label": "Decide L6 vs staying / Xcel" },
+        { "id": "stop_guessing", "label": "I stop guessing what to practice at home" }
+      ],
+      "proofLine": "National mobility L5 → L6 is 32.00 AA at a live sanctioned meet.",
+      "paywallHeadline": "{name}'s Level 5 season plan is ready",
+      "chips": {
+        "vault": [
+          "Table handspring block",
+          "Tight body / head alignment",
+          "Stick",
+          "Coach aid (VOID at L5)"
+        ],
+        "bars": [
+          "Glide kip",
+          "Cast above horizontal",
+          "Clear hip",
+          "Long-hang kip / pullover work",
+          "Flyaway dismount"
+        ],
+        "beam": [
+          "Back handspring or back walkover or side aerial",
+          "1/1 turn",
+          "Flight skill",
+          "Dance / jumps",
+          "Back tuck dismount"
+        ],
+        "floor": [
+          "Punch front / aerial option",
+          "Two front handsprings",
+          "RO + tuck / whip line",
+          "150° leap or switch leap",
+          "1/1 jump"
+        ]
+      }
+    },
+    "dp_6": {
+      "id": "dp_6",
+      "program": "dp",
+      "track": "optional",
+      "label": "Level 6",
+      "shortLabel": "L6",
+      "minAge": 7,
+      "helper": "First optional. Vault timers to mat stack. 4A+2B. 32.00 AA.",
+      "codeCycle": "2026-2030 optional",
+      "ship": "full",
+      "valueParts": { "A": 4, "B": 2, "C": 0, "startValue": 10.0 },
+      "mobility": {
+        "aa": 32.0,
+        "ies": null,
+        "nextLevel": "Level 7",
+        "note": "32.00 AA at a live sanctioned meet."
+      },
+      "numberThatMatters": {
+        "type": "mobility_aa",
+        "label": "32.00 AA + special requirements",
+        "target": 32.0
+      },
+      "goals": [
+        { "id": "srs", "label": "Hit special requirements every meet" },
+        { "id": "mobility", "label": "Hit 32.00 AA" },
+        { "id": "timer", "label": "Own a vault timer" },
+        { "id": "stop_guessing", "label": "I stop guessing what the routine is missing" }
+      ],
+      "proofLine": "Level 6 is the first optional. Judges want special requirements and 4A+2B, not a compulsory dance.",
+      "paywallHeadline": "{name}'s Level 6 season plan is ready",
+      "specialRequirements": {
+        "vault": ["FHS timer to stack", "Tsuk timer to stack", "Yurchenko timer to stack"],
+        "bars": [
+          "Cast min. 45° above horizontal",
+          "One bar change",
+          "360° clear circle (grp 3/6/7, no hips on bar)",
+          "Salto dismount min. A"
+        ],
+        "beam": [
+          "Non-flight acro series OR one acro flight (not mount/dismount)",
+          "Leap/jump with 180° split",
+          "1/1 turn on one foot",
+          "Salto / aerial-class dismount"
+        ],
+        "floor": [
+          "Acro passes",
+          "Dance passage with required split leap",
+          "Turn on one foot",
+          "Salto in last acro pass"
+        ]
+      },
+      "chips": {
+        "vault": ["FHS timer", "Tsuk timer", "Yurchenko timer", "Timer landing / shape"],
+        "bars": ["Cast height", "Bar change", "Clear circle", "Salto dismount", "Missing a B"],
+        "beam": ["Acro series / flight", "180° leap or jump", "1/1 turn", "Dismount"],
+        "floor": ["Missing an SR", "Dance passage", "Last-pass salto", "Start value leaking"]
+      }
+    },
+    "dp_7": {
+      "id": "dp_7",
+      "program": "dp",
+      "track": "optional",
+      "label": "Level 7",
+      "shortLabel": "L7",
+      "minAge": 7,
+      "helper": "More SRs. 4A+3B. 32.00 AA or 8.50 IES.",
+      "codeCycle": "2026-2030 optional",
+      "ship": "full",
+      "valueParts": { "A": 4, "B": 3, "C": 0, "startValue": 10.0 },
+      "mobility": {
+        "aa": 32.0,
+        "ies": 8.5,
+        "nextLevel": "Level 8",
+        "note": "32.00 AA or 8.50 IES at a live sanctioned meet."
+      },
+      "numberThatMatters": {
+        "type": "mobility_aa_or_ies",
+        "label": "32.00 AA or 8.50 IES",
+        "target": 32.0,
+        "ies": 8.5
+      },
+      "goals": [
+        { "id": "srs", "label": "Hit special requirements every meet" },
+        { "id": "mobility", "label": "Hit 32.00 AA" },
+        { "id": "ies", "label": "Keep an IES path open" },
+        { "id": "stop_guessing", "label": "I stop guessing what the routine is missing" }
+      ],
+      "proofLine": "L7 mobility is 32.00 AA or 8.50 IES. Cast to HS (45° still fulfills the SR).",
+      "paywallHeadline": "{name}'s Level 7 season plan is ready",
+      "specialRequirements": {
+        "vault": ["FHS / Tsuk / Yurchenko timer family", "L7 may land Tsuk/Yurchenko timers on the back"],
+        "bars": [
+          "Cast to handstand (45° fulfills SR)",
+          "Two 360° clear circles (one B; one grp 3/6/7)",
+          "Salto dismount min. A"
+        ],
+        "beam": ["Acro series AND flight", "Dance / 180 split", "Turn", "Dismount"],
+        "floor": ["Forward salto work", "Backward salto work", "Dance passage", "Turn"]
+      },
+      "chips": {
+        "vault": ["Timer choice", "Landing / shape", "When to leave the stack"],
+        "bars": ["Cast to HS", "Two clear circles", "Missing the B circle", "Salto dismount"],
+        "beam": ["Series without flight", "Flight without series", "Turn", "Dismount"],
+        "floor": ["No forward salto", "No backward salto", "Dance passage", "Last-pass construction"]
+      }
+    },
+    "dp_8": {
+      "id": "dp_8",
+      "program": "dp",
+      "track": "optional",
+      "label": "Level 8",
+      "shortLabel": "L8",
+      "minAge": 8,
+      "helper": "9.8 SV + up to 0.20 composition credit. 4A+4B. 34.00 AA or 8.50 IES.",
+      "codeCycle": "2026-2030 optional",
+      "ship": "full",
+      "valueParts": { "A": 4, "B": 4, "C": 0, "startValue": 9.8, "compositionCreditMax": 0.2 },
+      "mobility": {
+        "aa": 34.0,
+        "ies": 8.5,
+        "nextLevel": "Level 9",
+        "note": "34.00 AA or 8.50 IES at a live sanctioned meet."
+      },
+      "numberThatMatters": {
+        "type": "mobility_aa_or_ies",
+        "label": "34.00 AA or 8.50 IES",
+        "target": 34.0,
+        "ies": 8.5
+      },
+      "goals": [
+        { "id": "srs", "label": "Hit SRs and composition credit" },
+        { "id": "mobility", "label": "Hit 34.00 AA" },
+        { "id": "ies", "label": "IES path" },
+        { "id": "recruiting", "label": "Start a recruiting card" }
+      ],
+      "proofLine": "L8 starts at 9.8 plus up to 0.20 composition credit under the 2026–30 code.",
+      "paywallHeadline": "{name}'s Level 8 season plan is ready",
+      "specialRequirements": {
+        "vault": ["Restricted optional table list (HS twisters, Tsuk tuck/pike, Yurchenko tuck, etc.)"],
+        "bars": [
+          "Cast to HS",
+          "Two B elements: flight (not dmt) OR LA turn (not mt/dmt)",
+          "B 360° clear circle grp 3/6/7 (not dmt)",
+          "Salto dismount min. A"
+        ],
+        "beam": ["SR + composition credit"],
+        "floor": ["SR + composition credit"]
+      },
+      "chips": {
+        "vault": ["Allowed vault choice", "Start value leaving tenths", "Landing"],
+        "bars": ["Missing flight or turn B", "Clear circle B", "Cast HS", "Composition credit"],
+        "beam": ["Missing SR", "Composition credit left on the table", "Connections"],
+        "floor": ["Missing SR", "Two different B saltos", "Dance VPs", "Composition credit"]
+      }
+    },
+    "dp_9": {
+      "id": "dp_9",
+      "program": "dp",
+      "track": "optional",
+      "label": "Level 9",
+      "shortLabel": "L9",
+      "minAge": 8,
+      "helper": "3A+4B+1C plus bonus and composition. 34.00 AA or 8.50 IES.",
+      "codeCycle": "2026-2030 optional",
+      "ship": "stub",
+      "valueParts": { "A": 3, "B": 4, "C": 1, "startValue": 9.5 },
+      "mobility": {
+        "aa": 34.0,
+        "ies": 8.5,
+        "nextLevel": "Level 10",
+        "note": "34.00 AA or 8.50 IES at a live sanctioned meet."
+      },
+      "numberThatMatters": {
+        "type": "mobility_aa_or_ies",
+        "label": "34.00 AA or 8.50 IES",
+        "target": 34.0,
+        "ies": 8.5
+      },
+      "goals": [
+        { "id": "sv", "label": "Raise start value" },
+        { "id": "mobility", "label": "Hit 34.00 AA" },
+        { "id": "ies", "label": "IES vs all-around" },
+        { "id": "recruiting", "label": "Recruiting video / score card" }
+      ],
+      "proofLine": "L9 construction is 3A+4B+1C. Mobility is 34.00 AA or 8.50 IES.",
+      "paywallHeadline": "{name}'s Level 9 season plan is ready",
+      "chips": {
+        "vault": ["Start value too low", "Allowed vault vs stuck landing"],
+        "bars": ["Missing an SR", "Bonus not connecting", "One event carrying the AA"],
+        "beam": ["Missing an SR", "Bonus not connecting", "Composition credit"],
+        "floor": ["Missing an SR", "Bonus not connecting", "IES vs AA decision"]
+      }
+    },
+    "dp_10": {
+      "id": "dp_10",
+      "program": "dp",
+      "track": "optional",
+      "label": "Level 10",
+      "shortLabel": "L10",
+      "minAge": 9,
+      "helper": "Terminal DP level. 3A+3B+2C plus bonus and composition.",
+      "codeCycle": "2026-2030 optional",
+      "ship": "stub",
+      "valueParts": { "A": 3, "B": 3, "C": 2, "startValue": 9.2 },
+      "mobility": {
+        "aa": null,
+        "ies": null,
+        "nextLevel": null,
+        "note": "No higher Development Program mobility level."
+      },
+      "numberThatMatters": {
+        "type": "execution_composition",
+        "label": "Execution + composition + bonus (no next-level mobility)"
+      },
+      "goals": [
+        { "id": "sv", "label": "Raise start value" },
+        { "id": "hit", "label": "Hit routines in season" },
+        { "id": "recruiting", "label": "Recruiting card" },
+        { "id": "one_event", "label": "Stop one event from sinking the AA" }
+      ],
+      "proofLine": "Level 10 is the end of the Development Program. The number that matters is execution, not a mobility score.",
+      "paywallHeadline": "{name}'s Level 10 season plan is ready",
+      "chips": {
+        "vault": ["Start value", "Stuck vs bonus vault"],
+        "bars": ["Missing SR", "Bonus connections", "Composition credit"],
+        "beam": ["Missing SR", "Bonus connections", "Composition credit"],
+        "floor": ["Missing SR", "Bonus connections", "Recruiting video"]
+      }
+    },
+    "xcel_bronze": {
+      "id": "xcel_bronze",
+      "program": "xcel",
+      "track": "xcel",
+      "label": "Xcel Bronze",
+      "shortLabel": "Bronze",
+      "minAge": 5,
+      "helper": "4 A value parts. Beginner. No mobility score to enter.",
+      "codeCycle": "2022-2028 Xcel",
+      "ship": "stub",
+      "valueParts": { "A": 4, "B": 0, "C": 0, "startValue": 10.0 },
+      "mobility": {
+        "aa": null,
+        "ies": null,
+        "note": "No national mobility score to enter Bronze."
+      },
+      "numberThatMatters": {
+        "type": "srs",
+        "label": "Special requirements + 4 A skills"
+      },
+      "goals": [
+        { "id": "srs", "label": "Hit special requirements" },
+        { "id": "fun", "label": "Stay in this division happily" },
+        { "id": "next", "label": "Move up when the hours make sense" }
+      ],
+      "proofLine": "This is not the JO routine. Judges want Bronze special requirements and allowed skills.",
+      "paywallHeadline": "{name}'s Xcel Bronze plan is ready",
+      "chips": {
+        "vault": ["Allowed beginner vault", "Run / board"],
+        "bars": ["Low-bar mount", "Cast depth", "Circling skill", "No-salto dismount"],
+        "beam": ["½ turn", "Jump or leap", "Non-flight acro"],
+        "floor": ["Missing an A", "Acro", "Dance"]
+      }
+    },
+    "xcel_silver": {
+      "id": "xcel_silver",
+      "program": "xcel",
+      "track": "xcel",
+      "label": "Xcel Silver",
+      "shortLabel": "Silver",
+      "minAge": 6,
+      "helper": "5 A value parts. No mobility score to enter.",
+      "codeCycle": "2022-2028 Xcel",
+      "ship": "stub",
+      "valueParts": { "A": 5, "B": 0, "C": 0, "startValue": 10.0 },
+      "mobility": {
+        "aa": null,
+        "ies": null,
+        "note": "No national mobility score to enter Silver."
+      },
+      "numberThatMatters": {
+        "type": "srs",
+        "label": "Special requirements + 5 A skills"
+      },
+      "goals": [
+        { "id": "srs", "label": "Hit special requirements" },
+        { "id": "fun", "label": "Stay in this division happily" },
+        { "id": "next", "label": "Move up when the hours make sense" }
+      ],
+      "proofLine": "This is not the JO routine. Judges want Silver special requirements and allowed skills.",
+      "paywallHeadline": "{name}'s Xcel Silver plan is ready",
+      "chips": {
+        "vault": ["Allowed vault", "Landing"],
+        "bars": ["Mount", "Cast to 45° below horizontal", "360° circle", "Dismount (no salto)"],
+        "beam": ["Turn", "Leap/jump", "Acro"],
+        "floor": ["Missing an A", "Acro", "Dance"]
+      }
+    },
+    "xcel_gold": {
+      "id": "xcel_gold",
+      "program": "xcel",
+      "track": "xcel",
+      "label": "Xcel Gold",
+      "shortLabel": "Gold",
+      "minAge": 7,
+      "helper": "6 A value parts. Not a JO Level 5 clone.",
+      "codeCycle": "2022-2028 Xcel",
+      "ship": "full",
+      "valueParts": { "A": 6, "B": 0, "C": 0, "startValue": 10.0 },
+      "mobility": {
+        "aa": null,
+        "ies": null,
+        "note": "No national score to enter Gold. 32.00 AA at Gold (or 8.50 IES) is the typical gate into Platinum."
+      },
+      "numberThatMatters": {
+        "type": "srs",
+        "label": "Special requirements + 6 A skills",
+        "moveUpTarget": 32.0
+      },
+      "goals": [
+        { "id": "srs", "label": "Hit special requirements" },
+        { "id": "fun", "label": "Stay in Gold happily" },
+        { "id": "platinum", "label": "Build toward Platinum (32.00 AA)" }
+      ],
+      "proofLine": "Gold is 6 A value parts + special requirements, not a JO Level 5 clone.",
+      "paywallHeadline": "{name}'s Xcel Gold plan is ready",
+      "specialRequirements": {
+        "vault": ["Allowed Gold vault — not a JO table clone"],
+        "bars": [
+          "Clear support to horizontal",
+          "Two 360° circling skills",
+          "Dismount"
+        ],
+        "beam": ["1/1 turn", "Two different Group 2 / 120° dance", "Acro"],
+        "floor": ["6 A value parts", "Acro series", "Dance / 120° split"]
+      },
+      "chips": {
+        "vault": ["Allowed Gold vault", "Start value if alt springboard"],
+        "bars": [
+          "Skill finishing in clear support at horizontal",
+          "Two 360° circling skills",
+          "Dismount"
+        ],
+        "beam": ["1/1 turn", "Two different Group 2 / 120° dance", "Acro"],
+        "floor": ["Missing an A", "Acro series", "Dance / 120° split"]
+      }
+    },
+    "xcel_platinum": {
+      "id": "xcel_platinum",
+      "program": "xcel",
+      "track": "xcel",
+      "label": "Xcel Platinum",
+      "shortLabel": "Platinum",
+      "minAge": 8,
+      "helper": "6A+1B. Typical entry: 32.00 AA at Gold or 8.50 IES.",
+      "codeCycle": "2022-2028 Xcel",
+      "ship": "full",
+      "valueParts": { "A": 6, "B": 1, "C": 0, "startValue": 10.0 },
+      "mobility": {
+        "aa": 32.0,
+        "ies": 8.5,
+        "fromDivision": "Gold",
+        "nextLevel": "Diamond",
+        "note": "Typical national gate into Platinum is 32.00 AA at Gold or 8.50 IES. Confirm current R&P in code comments."
+      },
+      "numberThatMatters": {
+        "type": "mobility_aa_or_ies",
+        "label": "Hit SRs + the B · 32.00 if moving up",
+        "target": 32.0,
+        "ies": 8.5
+      },
+      "goals": [
+        { "id": "b_skill", "label": "Own the required B" },
+        { "id": "srs", "label": "Hit special requirements" },
+        { "id": "diamond", "label": "Build toward Diamond" }
+      ],
+      "proofLine": "Platinum is the first real B-skill hunt in Xcel — not a JO Level 6 clone.",
+      "paywallHeadline": "{name}'s Xcel Platinum plan is ready",
+      "chips": {
+        "vault": ["Allowed Platinum vault", "Start value"],
+        "bars": ["Kip", "Circling skill", "Missing the B", "HB dismount"],
+        "beam": ["1/1 turn", "Dance series + 120° split", "Missing the B", "Acro"],
+        "floor": ["Missing the B", "SRs", "Dance series"]
+      }
+    },
+    "xcel_diamond": {
+      "id": "xcel_diamond",
+      "program": "xcel",
+      "track": "xcel",
+      "label": "Xcel Diamond",
+      "shortLabel": "Diamond",
+      "minAge": 9,
+      "helper": "5A+2B. Typical entry: 32.00 AA at Platinum or 8.50 IES.",
+      "codeCycle": "2022-2028 Xcel",
+      "ship": "stub",
+      "valueParts": { "A": 5, "B": 2, "C": 0, "startValue": 10.0 },
+      "mobility": {
+        "aa": 32.0,
+        "ies": 8.5,
+        "fromDivision": "Platinum",
+        "nextLevel": "Sapphire",
+        "note": "Typical national gate into Diamond is 32.00 AA at Platinum or 8.50 IES."
+      },
+      "numberThatMatters": {
+        "type": "mobility_aa_or_ies",
+        "label": "SRs + 2 Bs · 32.00 if moving up",
+        "target": 32.0,
+        "ies": 8.5
+      },
+      "goals": [
+        { "id": "srs", "label": "Hit special requirements" },
+        { "id": "bs", "label": "Own both Bs" },
+        { "id": "sapphire", "label": "Build toward Sapphire" }
+      ],
+      "proofLine": "Diamond is 5A+2B. This is not a JO optional checklist.",
+      "paywallHeadline": "{name}'s Xcel Diamond plan is ready",
+      "chips": {
+        "vault": ["Allowed Diamond vault", "Start value"],
+        "bars": ["Clear support 45° from vertical", "B circling skill", "Missing a B"],
+        "beam": ["1/1 turn", "Dance series + 155° split", "Missing a B"],
+        "floor": ["Missing a B", "SRs"]
+      }
+    },
+    "xcel_sapphire": {
+      "id": "xcel_sapphire",
+      "program": "xcel",
+      "track": "xcel",
+      "label": "Xcel Sapphire",
+      "shortLabel": "Sapphire",
+      "minAge": 12,
+      "helper": "3A+3B+1C. 9.6 SV + up to 0.40 bonus. Min age 12.",
+      "codeCycle": "2022-2028 Xcel",
+      "ship": "stub",
+      "valueParts": { "A": 3, "B": 3, "C": 1, "startValue": 9.6, "bonusMax": 0.4 },
+      "mobility": {
+        "aa": 32.0,
+        "ies": 8.5,
+        "fromDivision": "Diamond",
+        "nextLevel": null,
+        "note": "Typical national gate into Sapphire is 32.00 AA at Diamond or 8.50 IES. Terminal Xcel division."
+      },
+      "numberThatMatters": {
+        "type": "execution_composition",
+        "label": "9.6 SV + bonus · SRs + C skill"
+      },
+      "goals": [
+        { "id": "c_skill", "label": "Own the C" },
+        { "id": "bonus", "label": "Connect bonus" },
+        { "id": "hit", "label": "Hit routines" }
+      ],
+      "proofLine": "Sapphire starts at 9.6 with up to 0.40 bonus. Still Xcel rules, not JO Level 9.",
+      "paywallHeadline": "{name}'s Xcel Sapphire plan is ready",
+      "chips": {
+        "vault": ["Allowed Sapphire vault", "Start value"],
+        "bars": ["B clear support at vertical", "B circle", "C skill / bonus"],
+        "beam": ["Missing SR", "C / bonus connections"],
+        "floor": ["Missing SR", "C / bonus connections"]
+      }
+    },
+    "preteam": {
+      "id": "preteam",
+      "program": "preteam",
+      "track": "preteam",
+      "label": "In-house / not sure",
+      "shortLabel": "Pre-team",
+      "minAge": null,
+      "helper": "Figure out whether she’s ready to compete, and in which program.",
+      "codeCycle": null,
+      "ship": "stub",
+      "mobility": {
+        "aa": null,
+        "ies": null,
+        "note": "No mobility score. Decision is JO vs Xcel vs wait."
+      },
+      "numberThatMatters": {
+        "type": "decision",
+        "label": "Ready to compete? JO or Xcel?"
+      },
+      "goals": [
+        { "id": "decide_program", "label": "Decide JO vs Xcel" },
+        { "id": "first_meet", "label": "Get ready for a first meet" },
+        { "id": "fun", "label": "Keep it fun while skills build" }
+      ],
+      "proofLine": "A lot of gyms compete L3 or Xcel Bronze first. The plan is a decision, not a 34.00 hunt.",
+      "paywallHeadline": "{name}'s first-season plan is ready",
+      "chips": {
+        "vault": ["Run / hurdle", "Handspring shape"],
+        "bars": ["Pullover", "Glide", "Kip conversation"],
+        "beam": ["Handstand", "Cartwheel", "Freeze"],
+        "floor": ["Handstand", "Round-off", "Back handspring prep"]
+      }
+    }
+  },
+  "planCards": [
+    {
+      "id": "this_week",
+      "title": "This week",
+      "rules": "Max 3 home drills, 12 minutes total. Never new skills. Coach owns technique."
+    },
+    {
+      "id": "requirement_map",
+      "title": "Requirement map",
+      "rules": "Compulsory skill list for L1–5. SR checklist for L6–10 and Xcel."
+    },
+    {
+      "id": "meet_week",
+      "title": "Meet week",
+      "rules": "Shared packing + timeline if a meet date exists."
+    },
+    {
+      "id": "number",
+      "title": "Number that matters",
+      "rules": "Pull numberThatMatters from the selected pack. Never label L1–3 scores as mobility."
+    }
+  ],
+  "meetDayPacking": [
+    "Competition leo + backup leo",
+    "Warmups",
+    "Grips / wristbands / tape / pre-wrap",
+    "Hair kit (gel, pins, extra bun kit)",
+    "Water + crumb-free snack",
+    "Slides + extra socks",
+    "Parent: stadium seat, cash/card, schedule screenshot, charger"
+  ],
+  "meetDayRules": [
+    "Arrive 30 minutes before open stretch, not march-in",
+    "Hair done in the car, jacket zipped",
+    "No coaching from the bleachers",
+    "One sentence of praise after the last event that is not a score"
+  ]
+}
