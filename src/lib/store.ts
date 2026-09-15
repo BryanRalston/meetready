@@ -11,6 +11,7 @@ export const emptyDraft = (): Draft => ({
   momentId: "",
   meetDate: "",
   meetName: "",
+  sessionTime: "",
   events: [],
   chips: [],
   hours: "",
@@ -35,6 +36,7 @@ type State = {
   commitDraft: () => string;
   setActive: (id: string) => void;
   addGymnast: (g: Draft) => string;
+  updateGymnast: (id: string, patch: Partial<Draft>) => void;
   removeGymnast: (id: string) => void;
   addScore: (score: Omit<MeetScore, "id">) => void;
   removeScore: (id: string) => void;
@@ -58,10 +60,11 @@ function sampleGymnast(): Gymnast {
     momentId: "first_meet",
     meetDate: iso,
     meetName: "Spring Classic",
+    sessionTime: "",
     events: ["bars", "beam"],
     chips: [
-      "bars::Glide kip",
-      "beam::Vertical handstand",
+      "bars::Straddle or pike glide kip",
+      "beam::1/2 turn in forward passé (NOT 1/1)",
       "freeze",
     ],
     hours: "7-10",
@@ -105,7 +108,7 @@ export const useMeet = create<State>()(
       unlock: (kind) => set({ unlocked: true, planKind: kind }),
       commitDraft: () => {
         const d = get().draft;
-        const g: Gymnast = { ...d, id: uid(), createdAt: new Date().toISOString() };
+        const g: Gymnast = { ...emptyDraft(), ...d, id: uid(), createdAt: new Date().toISOString() };
         set({
           gymnasts: [...get().gymnasts, g],
           activeId: g.id,
@@ -115,10 +118,14 @@ export const useMeet = create<State>()(
       },
       setActive: (id) => set({ activeId: id }),
       addGymnast: (d) => {
-        const g: Gymnast = { ...d, id: uid(), createdAt: new Date().toISOString() };
+        const g: Gymnast = { ...emptyDraft(), ...d, id: uid(), createdAt: new Date().toISOString() };
         set({ gymnasts: [...get().gymnasts, g], activeId: g.id });
         return g.id;
       },
+      updateGymnast: (id, patch) =>
+        set({
+          gymnasts: get().gymnasts.map((g) => (g.id === id ? { ...g, ...patch } : g)),
+        }),
       removeGymnast: (id) => {
         const gymnasts = get().gymnasts.filter((g) => g.id !== id);
         const activeId =
@@ -155,6 +162,8 @@ export const useMeet = create<State>()(
               gymnastId: g.id,
               date: new Date(Date.now() - 86400000 * 28).toISOString().slice(0, 10),
               name: "In-house mock",
+              packId: g.packId,
+              meetKind: "in_house",
               vault: 8.4,
               bars: 8.1,
               beam: 8.0,
@@ -177,7 +186,22 @@ export const useMeet = create<State>()(
           packing: [],
         }),
     }),
-    { name: "meetready-v2" },
+    {
+      name: "meetready-v2",
+      merge: (persisted, current) => {
+        if (!persisted || typeof persisted !== "object") return current;
+        const p = persisted as Partial<State>;
+        return {
+          ...current,
+          ...p,
+          gymnasts: (p.gymnasts ?? current.gymnasts).map((g) => ({ ...emptyDraft(), ...g })),
+          scores: (p.scores ?? current.scores).map((s) => ({
+            ...s,
+            meetKind: s.meetKind ?? "unsure",
+          })),
+        };
+      },
+    },
   ),
 );
 
@@ -190,3 +214,20 @@ export const ROLES: { id: RoleId; label: string; hint: string }[] = [
   { id: "gymnast", label: "Gymnast", hint: "This is your plan" },
   { id: "coach", label: "Coach", hint: "Tag only — this app is for families" },
 ];
+
+export function planKindLabel(kind: PlanKind | null) {
+  switch (kind) {
+    case "yearly":
+      return "Yearly";
+    case "season":
+      return "Season";
+    case "monthly":
+      return "Monthly";
+    case "trial":
+      return "7-day trial";
+    case "free":
+      return "This device";
+    default:
+      return null;
+  }
+}

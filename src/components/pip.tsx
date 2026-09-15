@@ -33,13 +33,26 @@ export function Pip({
 export function PipAside({
   pose = "whisper",
   children,
+  onPipClick,
 }: {
   pose?: PipPose;
   children: string;
+  onPipClick?: () => void;
 }) {
   return (
-    <aside className="pip-aside rise">
-      <Pip pose={pose} size={56} />
+    <aside className="pip-aside">
+      {onPipClick ? (
+        <button
+          type="button"
+          aria-label="Pip"
+          onClick={onPipClick}
+          className="press shrink-0 rounded-md"
+        >
+          <Pip pose={pose} size={56} />
+        </button>
+      ) : (
+        <Pip pose={pose} size={56} />
+      )}
       <p>
         <span className="pip-name">Pip</span>
         {children}

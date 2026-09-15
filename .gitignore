@@ -8,5 +8,13 @@ dist
 .DS_Store
 .grok/skills/
 .grok/references/
+.grok/evals/
+.grok/handoffs/
+.grok/status
+.grok/favicon-*.html
+.grok/favicon-*.png
 public/__grok/
 screenshots/app-builder-*
+.project_id
+.node_modules.lock
+AGENTS.md.off

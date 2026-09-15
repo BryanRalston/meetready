@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "updated": "2026-09-14",
-  "disclaimer": "Coach owns technique and level placement. MeetReady tracks the household plan. Mobility and special requirements follow USAG 2026–27 Rules & Policies, 2021–2029 DP compulsories (L1–5), 2026–2030 DP Optional Code (L6–10), and 2022–2028 Xcel Code. State qualifier scores are not national mobility.",
+  "disclaimer": "Coach owns technique and level placement. MeetReady tracks the household plan. Mobility and special requirements follow USAG 2026–27 Rules & Policies, 2021–2029 DP compulsories (L1–5), 2026–2030 DP Optional Code (L6–10), and 2022–2028 Xcel Code (extended through 7/31/28). Xcel cannot satisfy Development Program mobility. State qualifier scores are not national mobility. Missing SR −0.50 off SV. Restricted skill = no VP, −0.50 off SV.",
   "subscription": {
     "yearly": { "price": 49.99, "label": "$0.14/day", "badge": "BEST VALUE" },
     "monthly": { "price": 9.99 },
@@ -49,11 +49,11 @@
       "minAge": 4,
       "helper": "Developmental. Often in-house. No mobility score.",
       "codeCycle": "2021-2029 compulsory",
-      "ship": "stub",
+      "ship": "full",
       "mobility": {
         "aa": null,
         "ies": null,
-        "note": "No USAG mobility score. Coach call only."
+        "note": "No USAG mobility score at L1–L3. Coach call only. Live sanctioned meets only."
       },
       "numberThatMatters": {
         "type": "consistency",
@@ -67,10 +67,35 @@
       "proofLine": "Levels 1–3 have no mobility score. Readiness is skills + coach call.",
       "paywallHeadline": "{name}'s Level 1 plan is ready",
       "chips": {
-        "vault": ["Run / hurdle", "Stretch jump onto mat", "Tight body on landing"],
-        "bars": ["Pullover", "Cast", "Back hip circle", "Low-bar dismount"],
-        "beam": ["Mount", "Holds / poses", "Straight jump", "Dismount"],
-        "floor": ["Forward roll", "Cartwheel", "Split shapes", "Handstand prep"]
+        "vault": [
+          "Straight jump onto mat stack (min 16\")"
+        ],
+        "bars": [
+          "Pullover",
+          "Cast",
+          "Back hip circle",
+          "Dismount: straddle sole circle OR underswing"
+        ],
+        "beam": [
+          "Jump to front support mount",
+          "Tuck stand–pike stand–needle kick–tuck stand–straight stand",
+          "Releve-lock-hold",
+          "Forward passé balance on flat foot",
+          "Stretch jump",
+          "Arabesque 30° (no hold)",
+          "Step, leg swing, step, leg swing",
+          "From kneel, cartwheel to partial handstand dismount"
+        ],
+        "floor": [
+          "Forward-entry cartwheel 1/4 turn in",
+          "Backward roll tucked",
+          "Candlestick",
+          "Forward passé balance — mark/press to releve",
+          "Forward chassé",
+          "Stretch jump",
+          "Forward roll tucked",
+          "Minimum 3/4 handstand"
+        ]
       }
     },
     "dp_2": {
@@ -82,11 +107,11 @@
       "minAge": 5,
       "helper": "Developmental. No mobility score.",
       "codeCycle": "2021-2029 compulsory",
-      "ship": "stub",
+      "ship": "full",
       "mobility": {
         "aa": null,
         "ies": null,
-        "note": "No USAG mobility score. Coach call only."
+        "note": "No USAG mobility score at L1–L3. Coach call only. Live sanctioned meets only."
       },
       "numberThatMatters": {
         "type": "consistency",
@@ -100,10 +125,37 @@
       "proofLine": "Levels 1–3 have no mobility score. Readiness is skills + coach call.",
       "paywallHeadline": "{name}'s Level 2 plan is ready",
       "chips": {
-        "vault": ["Run / hurdle", "Jump to handstand, fall to back", "Straight handstand shape"],
-        "bars": ["Glide swing", "Pullover", "Cast", "Back hip circle", "Underswing dismount"],
-        "beam": ["Holds", "Cartwheel", "Jumps", "Dismount"],
-        "floor": ["Handstand", "Bridge kickover prep", "Leap", "Backward roll"]
+        "vault": [
+          "Jump to handstand, fall to flat back (mat stack min 16\")"
+        ],
+        "bars": [
+          "Glide swing, return to stand",
+          "Pullover",
+          "Cast (no angle requirement)",
+          "Second cast (no angle requirement)",
+          "Back hip circle",
+          "Underswing dismount"
+        ],
+        "beam": [
+          "Jump to front support mount",
+          "Single-leg V-sit, tuck stand–pike stand–single-leg kick to straight stand",
+          "Passé balance, press to releve, lower, hold 2 seconds",
+          "Stretch jump",
+          "Arabesque 30° (hold 1 second)",
+          "Front leg swing–close, back leg swing–close, plie-releve-lock",
+          "Pivot turn",
+          "Cartwheel to side handstand dismount"
+        ],
+        "floor": [
+          "Cartwheel step-in",
+          "Straight-arm backward roll to push-up",
+          "Passé, releve, heel-snap 1/2 turn",
+          "Forward chassé, straight-leg leap 60°",
+          "Split jump 60°",
+          "Handstand",
+          "Candlestick to sit",
+          "Bridge, back kickover"
+        ]
       }
     },
     "dp_3": {
@@ -113,13 +165,13 @@
       "label": "Level 3",
       "shortLabel": "L3",
       "minAge": 6,
-      "helper": "First real competitive look at many gyms. No mobility score.",
+      "helper": "First real competitive look at many gyms. No mobility score. No cast-angle requirement.",
       "codeCycle": "2021-2029 compulsory",
       "ship": "full",
       "mobility": {
         "aa": null,
         "ies": null,
-        "note": "No USAG mobility score at L1–L3. A 34+ AA is a family benchmark, not mobility."
+        "note": "No USAG mobility score at L1–L3. Live sanctioned meets only. A 34+ AA is a family benchmark, not mobility."
       },
       "numberThatMatters": {
         "type": "benchmark",
@@ -132,39 +184,41 @@
         { "id": "l4_ready", "label": "Look ready for Level 4 compulsories" },
         { "id": "stop_guessing", "label": "I stop guessing what to practice at home" }
       ],
-      "proofLine": "No USAG mobility score at Levels 1–3. Readiness is skills + coach call.",
+      "proofLine": "No USAG mobility score at Levels 1–3. Pullover or glide kip both start from 10.0. Casts have no angle requirement. Readiness is skills + coach call.",
       "paywallHeadline": "{name}'s Level 3 season plan is ready",
       "chips": {
         "vault": [
-          "Run / hurdle timing",
-          "Board punch",
-          "Tight handspring over 32–48\" stack",
-          "Stick the landing"
+          "Handspring over sideways resi / raised mat (min 32\")",
+          "Run / hurdle / board punch",
+          "Tight body, stick"
         ],
         "bars": [
-          "Glide",
-          "Pullover or kip",
-          "Cast to horizontal",
+          "Glide swing",
+          "Pullover OR glide kip (both 10.0 SV)",
+          "Cast (no angle requirement)",
           "Back hip circle",
+          "Second back hip circle",
           "Front hip circle",
-          "Squat-on + stretch jump dismount"
+          "Cast, squat/pike-on, stretch jump dismount"
         ],
         "beam": [
-          "Cross handstand to vertical",
-          "90° leap",
-          "Heel-snap 180 turn",
-          "Straight jump / jump series",
-          "Cartwheel to side HS ¼-turn dismount",
-          "She freezes"
+          "Front support fish-pose mount",
+          "Cross handstand (mark, no hold)",
+          "1/2 heel-snap turn in forward passé",
+          "Stretch jump + stretch jump",
+          "Arabesque 45°",
+          "Straight-leg leap 90°",
+          "Cartwheel to HS 1/4-turn dismount"
         ],
         "floor": [
-          "Handstand forward roll (vertical)",
-          "Handstand–bridge–kickover",
-          "90° leap + stretch-to-split connection",
+          "Handstand forward roll, straight arms",
+          "Chassé, split leap 90°",
+          "Stretch jump + split jump 90°",
+          "Handstand-bridge-back kickover",
           "Forward split",
-          "Backward roll to push-up",
-          "Round-off",
-          "Back handspring to two feet"
+          "1/2 turn in forward passé",
+          "Straight-arm backward roll tuck, open to 45°, lower to push-up",
+          "Round-off back handspring rebound stick"
         ]
       }
     },
@@ -195,35 +249,43 @@
         { "id": "table", "label": "Survive the first table vault season" },
         { "id": "stop_guessing", "label": "I stop guessing what to practice at home" }
       ],
-      "proofLine": "National mobility L4 → L5 is 34.00 AA at a live sanctioned meet.",
+      "proofLine": "National mobility L4 → L5 is 34.00 AA at a live sanctioned meet. Two 36.00 AA scores at L4 (current or previous season) may skip to L6 — a note, never a push. Beam turn is 1/2 passé, not 1/1.",
       "paywallHeadline": "{name}'s Level 4 season plan is ready",
       "chips": {
         "vault": [
-          "Run / hurdle to the table",
-          "Board punch and block",
-          "Tight handspring over table",
-          "Coach aid (2.00 deduction, not void)"
+          "Handspring over TABLE",
+          "Run / hurdle / board punch / block",
+          "Coach aid is a 2.00 deduction, not void"
         ],
         "bars": [
-          "Glide kip",
-          "Cast to horizontal",
-          "Squat-on / pike-on",
-          "Long-hang kip",
-          "Tap swing + ½-turn dismount"
+          "Straddle or pike glide kip",
+          "Cast to horizontal, return to support (legs together)",
+          "Cast squat/pike-on OR squat/pike-on, tuck sole circle, jump to HB",
+          "Long hang kip",
+          "Cast to horizontal on HB (legs together)",
+          "Back hip circle",
+          "Underswing + counterswing 30° below horizontal",
+          "Tap swing + 1/2-turn dismount"
         ],
         "beam": [
-          "Vertical handstand",
-          "120° jumps",
-          "1/1 passé turn",
-          "Jump series",
-          "Cartwheel to side-HS dismount"
+          "Front support fish-pose mount",
+          "Cartwheel",
+          "1/2 turn in forward passé (NOT 1/1)",
+          "Stretch jump, split jump",
+          "Cross handstand, hold 1 second",
+          "Scale at horizontal",
+          "Straight-leg leap 120°",
+          "Cartwheel to HS 1/4-turn dismount (hold 1 second)"
         ],
         "floor": [
           "Back walkover",
-          "Front handspring step-out",
-          "Round-off + 2 back handsprings",
-          "120° leap / straddle jump",
-          "1/1 turn"
+          "Front handspring step-out, cartwheel step-in, back extension roll",
+          "Stretch jump 1/2 turn",
+          "Straight-leg leap 120° (dance passage)",
+          "Straddle jump 120°",
+          "Forward split",
+          "1/1 turn in forward passé",
+          "Round-off, 2 back handsprings, rebound stick"
         ]
       }
     },
@@ -241,7 +303,7 @@
         "aa": 32.0,
         "ies": null,
         "nextLevel": "Level 6",
-        "note": "32.00 AA at a live sanctioned meet."
+        "note": "32.00 AA at a live sanctioned meet. 32.00 AA at L5 may skip L6 and enter L7 if other entry requirements are met. Mobility back and forth between L5 and L6 is allowed."
       },
       "numberThatMatters": {
         "type": "mobility_aa",
@@ -251,38 +313,45 @@
       "goals": [
         { "id": "mobility", "label": "Hit 32.00 AA toward optionals" },
         { "id": "clean", "label": "Clean last-compulsory deductions" },
-        { "id": "decide", "label": "Decide L6 vs staying / Xcel" },
+        { "id": "decide", "label": "Decide L6 vs skip-to-L7 vs Xcel" },
         { "id": "stop_guessing", "label": "I stop guessing what to practice at home" }
       ],
-      "proofLine": "National mobility L5 → L6 is 32.00 AA at a live sanctioned meet.",
+      "proofLine": "National mobility L5 → L6 is 32.00 AA at a live sanctioned meet. 32.00 AA at L5 may skip L6 and enter L7 if other entry requirements are met. L5↔L6 back-and-forth is allowed.",
       "paywallHeadline": "{name}'s Level 5 season plan is ready",
       "chips": {
         "vault": [
-          "Table handspring block",
-          "Tight body / head alignment",
-          "Stick",
-          "Coach aid (VOID at L5)"
+          "Table handspring",
+          "Coach aid VOIDS"
         ],
         "bars": [
           "Glide kip",
-          "Cast above horizontal",
-          "Clear hip",
-          "Long-hang kip / pullover work",
-          "Flyaway dismount"
+          "Cast above horizontal (straddle cast ok at L5 only)",
+          "Clear hip above horizontal OR sole circle to clear support OR stalder to clear support",
+          "Squat/pike-on to HB",
+          "Long hang kip",
+          "Long hang pullover",
+          "Counterswing 15° below horizontal",
+          "Tuck, pike, or layout flyaway"
         ],
         "beam": [
-          "Back handspring or back walkover or side aerial",
-          "1/1 turn",
-          "Flight skill",
-          "Dance / jumps",
-          "Back tuck dismount"
+          "Mount not requiring a board",
+          "Acro: BWO OR back extension roll to 3/4 HS OR BHS step-out OR BHS 2-feet OR front walkover",
+          "1/1 turn in forward passé",
+          "Split jump, sissonne",
+          "Scale above horizontal",
+          "Straight-leg leap 150° + stretch jump",
+          "Cartwheel, stretch jump",
+          "Back salto dismount"
         ],
         "floor": [
-          "Punch front / aerial option",
-          "Two front handsprings",
-          "RO + tuck / whip line",
-          "150° leap or switch leap",
-          "1/1 jump"
+          "Front tuck OR front/side aerial",
+          "2 front handspring step-outs, cartwheel step-in, back extension roll",
+          "Stretch jump 1/1 turn",
+          "Split leap 150° or switch-leg leap 150°",
+          "Straddle jump 150°",
+          "Forward split",
+          "1/1 turn",
+          "Round-off, back handspring, back tuck stick"
         ]
       }
     },
@@ -293,7 +362,7 @@
       "label": "Level 6",
       "shortLabel": "L6",
       "minAge": 7,
-      "helper": "First optional. Vault timers to mat stack. 4A+2B. 32.00 AA.",
+      "helper": "First optional. Vault timers to stack ≥ underside of table. 4A+2B, SV 10.0. Missing SR −0.50 off SV. Allowable C’s = B.",
       "codeCycle": "2026-2030 optional",
       "ship": "full",
       "valueParts": { "A": 4, "B": 2, "C": 0, "startValue": 10.0 },
@@ -301,7 +370,7 @@
         "aa": 32.0,
         "ies": null,
         "nextLevel": "Level 7",
-        "note": "32.00 AA at a live sanctioned meet."
+        "note": "32.00 AA at a live sanctioned meet. Live sanctioned meets only."
       },
       "numberThatMatters": {
         "type": "mobility_aa",
@@ -314,34 +383,39 @@
         { "id": "timer", "label": "Own a vault timer" },
         { "id": "stop_guessing", "label": "I stop guessing what the routine is missing" }
       ],
-      "proofLine": "Level 6 is the first optional. Judges want special requirements and 4A+2B, not a compulsory dance.",
+      "proofLine": "L6 is 4A+2B, SV 10.0. Missing SR is −0.50 off SV. Allowable C’s count as B. Vault is a timer to a stack at least as high as the underside of the table — not a compulsory table handspring.",
       "paywallHeadline": "{name}'s Level 6 season plan is ready",
       "specialRequirements": {
-        "vault": ["FHS timer to stack", "Tsuk timer to stack", "Yurchenko timer to stack"],
+        "vault": [
+          "Source: 2026–2030 Vault Values L6/7/8 (docs/usag/dp-appendix3-l678-vault.pdf). ONLY these three, all 10.0. Any other vault = VOID.",
+          "1.111 Front handspring entry onto table, arrive on mat stack on the feet in a straight body with tight arch in the upper back; arm position optional.",
+          "3.116 ¼–½ twist on (Tsukahara entry) onto table, arrive on mat stack on the feet in straight-hollow; arm position optional.",
+          "4.111 Round-off entry (Yurchenko) onto table, arrive on mat stack on the feet in straight-hollow; arm position optional."
+        ],
         "bars": [
-          "Cast min. 45° above horizontal",
-          "One bar change",
-          "360° clear circle (grp 3/6/7, no hips on bar)",
-          "Salto dismount min. A"
+          "SR 1: Cast min. 45° above horizontal (above horiz fulfills SR)",
+          "SR 2: Min. one bar change",
+          "SR 3: One 360° clear circling elem from Grp 3/6/7 (no hips on bar)",
+          "SR 4: Salto dmt min A"
         ],
         "beam": [
-          "Non-flight acro series OR one acro flight (not mount/dismount)",
-          "Leap/jump with 180° split",
-          "1/1 turn on one foot",
-          "Salto / aerial-class dismount"
+          "SR 1: Non-flight acro series OR one acro flight (iso/in connection; excludes mt/dmt)",
+          "SR 2: Leap/jump requiring 180° cross or side split (iso/in series)",
+          "SR 3: Min 360° Grp 3 turn on one foot (iso/in series)",
+          "SR 4: Aerial/salto dmt min A"
         ],
         "floor": [
-          "Acro passes",
-          "Dance passage with required split leap",
-          "Turn on one foot",
-          "Salto in last acro pass"
+          "SR 1: Acro pass: min 2 directly connected flight elems, one a salto",
+          "SR 2: Second acro pass with a DIFFERENT salto: min 2 directly connected flight OR isolated B salto",
+          "SR 3: Dance passage min 2 different Grp 1 elems, one a LEAP 180° cross/side split",
+          "SR 4: Min 360° turn on one foot (iso/in series)"
         ]
       },
       "chips": {
-        "vault": ["FHS timer", "Tsuk timer", "Yurchenko timer", "Timer landing / shape"],
-        "bars": ["Cast height", "Bar change", "Clear circle", "Salto dismount", "Missing a B"],
-        "beam": ["Acro series / flight", "180° leap or jump", "1/1 turn", "Dismount"],
-        "floor": ["Missing an SR", "Dance passage", "Last-pass salto", "Start value leaking"]
+        "vault": ["1.111 FHS timer to stack (10.0)", "3.116 Tsuk timer to stack, feet (10.0)", "4.111 Yurchenko timer to stack, feet (10.0)"],
+        "bars": ["Cast not 45° above horizontal", "Missing bar change", "Missing Grp 3/6/7 clear circle", "Salto dmt", "Missing a B"],
+        "beam": ["No non-flight series and no acro flight", "180° leap/jump", "360° Grp 3 turn", "Aerial/salto dmt"],
+        "floor": ["First-pass salto connection", "Second pass different salto", "Dance passage leap 180°", "360° turn"]
       }
     },
     "dp_7": {
@@ -351,7 +425,7 @@
       "label": "Level 7",
       "shortLabel": "L7",
       "minAge": 7,
-      "helper": "More SRs. 4A+3B. 32.00 AA or 8.50 IES.",
+      "helper": "4A+3B, SV 10.0. 32.00 AA or 8.50 IES. One salto must be stretched (layout).",
       "codeCycle": "2026-2030 optional",
       "ship": "full",
       "valueParts": { "A": 4, "B": 3, "C": 0, "startValue": 10.0 },
@@ -359,7 +433,7 @@
         "aa": 32.0,
         "ies": 8.5,
         "nextLevel": "Level 8",
-        "note": "32.00 AA or 8.50 IES at a live sanctioned meet."
+        "note": "32.00 AA or 8.50 IES at a live sanctioned meet. Live sanctioned meets only."
       },
       "numberThatMatters": {
         "type": "mobility_aa_or_ies",
@@ -373,23 +447,39 @@
         { "id": "ies", "label": "Keep an IES path open" },
         { "id": "stop_guessing", "label": "I stop guessing what the routine is missing" }
       ],
-      "proofLine": "L7 mobility is 32.00 AA or 8.50 IES. Cast to HS (45° still fulfills the SR).",
+      "proofLine": "L7 is 4A+3B, SV 10.0. Cast to HS (45° fulfills the SR). Floor needs a backward salto pass, a forward salto pass, and one salto stretched (layout). Missing SR −0.50 off SV. Allowable C’s = B.",
       "paywallHeadline": "{name}'s Level 7 season plan is ready",
       "specialRequirements": {
-        "vault": ["FHS / Tsuk / Yurchenko timer family", "L7 may land Tsuk/Yurchenko timers on the back"],
-        "bars": [
-          "Cast to handstand (45° fulfills SR)",
-          "Two 360° clear circles (one B; one grp 3/6/7)",
-          "Salto dismount min. A"
+        "vault": [
+          "Source: 2026–2030 Vault Values L6/7/8 (docs/usag/dp-appendix3-l678-vault.pdf). ONLY these three, all 10.0. Any other vault = VOID.",
+          "1.111 Front handspring entry onto table, arrive on mat stack on the feet (same as L6).",
+          "3.116 Tsukahara entry onto table — L7 may arrive on the feet OR on the back, straight-hollow.",
+          "4.111 Yurchenko entry onto table — L7 may arrive on the feet OR on the back, straight-hollow."
         ],
-        "beam": ["Acro series AND flight", "Dance / 180 split", "Turn", "Dismount"],
-        "floor": ["Forward salto work", "Backward salto work", "Dance passage", "Turn"]
+        "bars": [
+          "SR 1: Cast to handstand (45° fulfills SR)",
+          "SR 2 & 3: Two 360° clear circles (no hips on bar), same or different — one must be B, one from Grp 3/6/7",
+          "SR 4: Salto dmt min A"
+        ],
+        "beam": [
+          "SR 1a: Acro series (with or without flight) AND",
+          "SR 1b: One acro flight (iso/in connection) — both exclude mt/dmt",
+          "SR 2: Leap/jump requiring 180° cross or side split",
+          "SR 3: Min 360° Grp 3 turn on one foot",
+          "SR 4: Aerial/salto dmt min A"
+        ],
+        "floor": [
+          "SR 1 & 2: Min two acro passes — one with salto bwd (min 2 directly connected flight elems); one with salto fwd (addl elems ok)",
+          "One salto stretched (bwd or fwd) — layout",
+          "SR 3: Dance passage min 2 different Grp 1 elems, one a LEAP 180°",
+          "SR 4: Min 360° turn on one foot"
+        ]
       },
       "chips": {
-        "vault": ["Timer choice", "Landing / shape", "When to leave the stack"],
-        "bars": ["Cast to HS", "Two clear circles", "Missing the B circle", "Salto dismount"],
-        "beam": ["Series without flight", "Flight without series", "Turn", "Dismount"],
-        "floor": ["No forward salto", "No backward salto", "Dance passage", "Last-pass construction"]
+        "vault": ["1.111 FHS to stack", "3.116 Tsuk — L7 may land on the back", "4.111 Yurchenko — L7 may land on the back"],
+        "bars": ["Cast to HS (45° fulfills)", "Missing the B clear circle", "Missing Grp 3/6/7 circle", "Salto dmt"],
+        "beam": ["Series without the required flight", "Flight without the series", "360° Grp 3 turn", "Aerial/salto dmt"],
+        "floor": ["No backward salto pass", "No forward salto pass", "No stretched/layout salto", "Dance passage leap 180°"]
       }
     },
     "dp_8": {
@@ -399,7 +489,7 @@
       "label": "Level 8",
       "shortLabel": "L8",
       "minAge": 8,
-      "helper": "9.8 SV + up to 0.20 composition credit. 4A+4B. 34.00 AA or 8.50 IES.",
+      "helper": "4A+4B, SV 9.8 + up to 0.20 composition credit. 34.00 AA or 8.50 IES. Allowable C’s = B.",
       "codeCycle": "2026-2030 optional",
       "ship": "full",
       "valueParts": { "A": 4, "B": 4, "C": 0, "startValue": 9.8, "compositionCreditMax": 0.2 },
@@ -407,7 +497,7 @@
         "aa": 34.0,
         "ies": 8.5,
         "nextLevel": "Level 9",
-        "note": "34.00 AA or 8.50 IES at a live sanctioned meet."
+        "note": "34.00 AA or 8.50 IES at a live sanctioned meet. Live sanctioned meets only."
       },
       "numberThatMatters": {
         "type": "mobility_aa_or_ies",
@@ -421,24 +511,40 @@
         { "id": "ies", "label": "IES path" },
         { "id": "recruiting", "label": "Start a recruiting card" }
       ],
-      "proofLine": "L8 starts at 9.8 plus up to 0.20 composition credit under the 2026–30 code.",
+      "proofLine": "L8 starts at 9.8 plus up to 0.20 composition credit (2026–30 code). Missing SR −0.50 off SV. Allowable C’s = B.",
       "paywallHeadline": "{name}'s Level 8 season plan is ready",
       "specialRequirements": {
-        "vault": ["Restricted optional table list (HS twisters, Tsuk tuck/pike, Yurchenko tuck, etc.)"],
-        "bars": [
-          "Cast to HS",
-          "Two B elements: flight (not dmt) OR LA turn (not mt/dmt)",
-          "B 360° clear circle grp 3/6/7 (not dmt)",
-          "Salto dismount min. A"
+        "vault": [
+          "Source: 2026–2030 Vault Values L6/7/8 (docs/usag/dp-appendix3-l678-vault.pdf). Header: ONLY the following Group 1 / 3 / 4 / 5 vaults are allowed. Not on the chart (incl. Group 2 saltos) = VOID. Coach names which chart vault she competes.",
+          "Grp 1: 1.101 HS 9.0; 1.102 HS ½ 9.1; 1.103 Yama 9.0; 1.104 Yama ½ 9.1; 1.105 ½–½ OR ¼–¾ 9.2; 1.106 ¼–½ repulsion 9.0; 1.108 ¼–¼ outward 9.0; 1.109 FHS board repulsion 9.1; 1.110 FHS board HS ½ 9.2; 1.111 FHS board ¼–½ repulsion 9.1; 1.201 HS 1/1 9.5; 1.202 HS 1½ 9.7; 1.203 Yama 1/1 9.5; 1.205 ½–1½ OR ¼–1¾ 9.6; 1.206 ½–1/1 OR ¼–1¼ 9.4; 1.207 1/1 → HS/Yama 9.5; 1.208 1/1 → ½ 9.7; 1.209 FHS board HS 1/1 9.6; 1.211 FHS board ½–½ OR ¼–¾ 9.3; 1.301 HS 2/1 10.0; 1.306 ½–2/1 OR ¼–2¼ 10.0; 1.311 FHS board ½–1/1 OR ¼–1¼ 9.5.",
+          "Grp 3: 3.201 Tsuk tuck 10.0; 3.303 Tsuk pike 10.0. Grp 4: 4.101 RO FF repulsion 9.0; 4.102 ½ 9.1; 4.201 1/1 9.4; 4.202 1½ (Allen) 9.6; 4.203 back tuck 10.0; 4.304 back pike 10.0. Grp 5: 5.101 RO FF ½ → HS 9.2; 5.102 HS ½ 9.4; 5.201 1/1 9.6; 5.202 1½ 9.8; 5.312 2/1 10.0."
         ],
-        "beam": ["SR + composition credit"],
-        "floor": ["SR + composition credit"]
+        "bars": [
+          "SR 1: Cast to HS",
+          "SR 2 & 3: Two B elems same or different — one with flight (not dmt) OR one with LA turn (not mt/dmt) AND one B 360° clear circle Grp 3/6/7 (not dmt)",
+          "SR 4: Salto dmt min A",
+          "CC max +0.20: B+B direct (not #2.201 cast HS) +0.10; B or ↑ dmt OR B or ↑ + A dmt +0.10"
+        ],
+        "beam": [
+          "SR 1: Acro series min two elements, one with flight (excludes mt/dmt)",
+          "SR 2: Leap/jump requiring 180° cross/side split (iso/in series)",
+          "SR 3: Min 360° Grp 3 turn on one foot (iso/in series)",
+          "SR 4: Aerial/salto dmt min A",
+          "CC max +0.20: B+B both flight +0.10; B or ↑ dmt OR B acro + A salto +0.10"
+        ],
+        "floor": [
+          "SR 1: Acro pass with 2 saltos (same or different) dir or indir connected with flight (w/ or w/o hand support)",
+          "SR 2: 3 different saltos (no aerials)",
+          "SR 3: Dance passage min 2 different Grp 1 elems, one a LEAP 180° cross/side split",
+          "SR 4: Min A salto last acro pass initiated",
+          "CC max +0.20: 2 different B or ↑ saltos AND 1 A salto +0.10; 2 different B or ↑ dance VPs +0.10"
+        ]
       },
       "chips": {
-        "vault": ["Allowed vault choice", "Start value leaving tenths", "Landing"],
-        "bars": ["Missing flight or turn B", "Clear circle B", "Cast HS", "Composition credit"],
-        "beam": ["Missing SR", "Composition credit left on the table", "Connections"],
-        "floor": ["Missing SR", "Two different B saltos", "Dance VPs", "Composition credit"]
+        "vault": ["Appendix 3 L8 list (Grp 1/3/4/5 only)", "Tsuk tuck/pike 10.0", "No Group 2 saltos on the L8 chart"],
+        "bars": ["Missing flight or LA-turn B", "Missing B Grp 3/6/7 clear circle", "Cast HS", "Composition credit left on the table"],
+        "beam": ["Acro series missing flight", "180° leap/jump", "360° Grp 3 turn", "CC: B+B both flight"],
+        "floor": ["Pass with 2 saltos", "Three different saltos (no aerials)", "Last-pass A salto", "CC: two different B saltos"]
       }
     },
     "dp_9": {
@@ -448,15 +554,15 @@
       "label": "Level 9",
       "shortLabel": "L9",
       "minAge": 8,
-      "helper": "3A+4B+1C plus bonus and composition. 34.00 AA or 8.50 IES.",
+      "helper": "3A+4B+1C, SV 9.5 + CC max 0.20. Bonus 0.30 (0.10 from first eligible D/E, rest CV). 34.00 AA or 8.50 IES.",
       "codeCycle": "2026-2030 optional",
-      "ship": "stub",
-      "valueParts": { "A": 3, "B": 4, "C": 1, "startValue": 9.5 },
+      "ship": "full",
+      "valueParts": { "A": 3, "B": 4, "C": 1, "startValue": 9.5, "compositionCreditMax": 0.2, "bonusMax": 0.3 },
       "mobility": {
         "aa": 34.0,
         "ies": 8.5,
         "nextLevel": "Level 10",
-        "note": "34.00 AA or 8.50 IES at a live sanctioned meet."
+        "note": "34.00 AA or 8.50 IES at a live sanctioned meet. Live sanctioned meets only. Allowable D/E = C. More than one restricted element is −0.50 off SV."
       },
       "numberThatMatters": {
         "type": "mobility_aa_or_ies",
@@ -470,13 +576,43 @@
         { "id": "ies", "label": "IES vs all-around" },
         { "id": "recruiting", "label": "Recruiting video / score card" }
       ],
-      "proofLine": "L9 construction is 3A+4B+1C. Mobility is 34.00 AA or 8.50 IES.",
+      "proofLine": "L9 is 3A+4B+1C, SV 9.5. Allowable D/E = C. First eligible/restricted D/E +0.10 D/E bonus. More than one restricted element is −0.50 off SV. CC max +0.20.",
       "paywallHeadline": "{name}'s Level 9 season plan is ready",
+      "specialRequirements": {
+        "vault": [
+          "Source: 2026–2030 Vault Values Level 9 (docs/usag/dp-appendix2-l9-vault.pdf). Chart is the allowable list with SVs. Vault not on this page = VOID. Coach names which chart vault she competes.",
+          "Grp 1: 1.101 8.5; 1.102 8.6; 1.103 8.5; 1.104 8.6; 1.105 8.6; 1.106 repulsion 7.0; 1.109 8.6; 1.110 8.7; 1.111 7.1; 1.201 9.0; 1.202 9.4; 1.203 9.0; 1.205 9.3; 1.206 8.9; 1.207 9.0; 1.208 9.3; 1.209 9.1; 1.211 8.7; 1.301 HS 2/1 10.0; 1.306 9.8; 1.307 9.8; 1.311 9.0.",
+          "Grp 2 (all 10.0 on this chart): 2.301 HS front tuck; 2.302 front tuck ½; 2.304 front pike; 2.310 FHS board → front tuck; 2.311 FHS board → front pike.",
+          "Grp 3 (90–180° LA turn allowed in first flight): 3.201 Tsuk tuck 9.6; 3.301 FHS board ¼–½ → back tuck 9.7; 3.302 Tsuk tuck 1/1 10.0; 3.303 Tsuk pike 9.7; 3.304 Tsuk layout 10.0; 3.305 FHS board ¼–½ → back pike 9.8; 3.306 / 3.308 10.0 (½–½ or ¼–¼/¾ front tuck variants / Tsuk tuck ½).",
+          "Grp 4: 4.101 7.0; 4.102 7.7; 4.201 9.1; 4.202 9.3; 4.203 back tuck 9.6; 4.301 2/1 9.8; 4.303 back tuck 1/1 10.0; 4.304 pike 9.7; 4.305 layout 10.0; 4.307 ½ off front tuck OR back tuck ½ 10.0; 4.407 ½ turn front tuck ½ 10.0. Grp 5 (¾–1/1 turn on): 5.101 8.9; 5.102 9.1; 5.107 9.2; 5.108 8.2; 5.201 9.2; 5.202 9.4; 5.207 9.3; 5.301 front tuck 10.0; 5.312 2/1 10.0."
+        ],
+        "bars": [
+          "SR 1: 2 bar changes",
+          "SR 2: Min one B flight",
+          "SR 3: 2nd different flight min C OR min B elem with LA turn (no mt/dmt)",
+          "SR 4: Salto dmt min B",
+          "CC max +0.20: 2 different C or ↑ VPs +0.10; C or ↑ dmt OR C or ↑ VP + B dmt +0.10"
+        ],
+        "beam": [
+          "SR 1: Acro series — 2 directly connected flight elems (no mt/dmt)",
+          "SR 2: Leap/jump requiring 180° cross or side split",
+          "SR 3: Min 360° turn",
+          "SR 4: Aerial/salto dmt min B",
+          "CC max +0.20: 2 different C or ↑ acro VP (no dmt) +0.10; C or ↑ dmt OR min B acro or C dance dir. connected to B dmt +0.10"
+        ],
+        "floor": [
+          "SR 1: One acro pass with 2 saltos (same or different) dir or indir connected with flight",
+          "SR 2: 3 different saltos (no aerials)",
+          "SR 3: Dance passage min 2 different Grp 1 elems, one a LEAP 180°",
+          "SR 4: Min B salto last acro pass initiated (L10 is min C)",
+          "CC max +0.20: 2 different C or ↑ saltos AND 1 B salto +0.10; 2 different C or ↑ dance VPs +0.10"
+        ]
+      },
       "chips": {
-        "vault": ["Start value too low", "Allowed vault vs stuck landing"],
-        "bars": ["Missing an SR", "Bonus not connecting", "One event carrying the AA"],
-        "beam": ["Missing an SR", "Bonus not connecting", "Composition credit"],
-        "floor": ["Missing an SR", "Bonus not connecting", "IES vs AA decision"]
+        "vault": ["Appendix 2 L9 SV chart", "10.0 path: 1.301 / Tsuk layout / Yurchenko layout", "Restricted vault = VOID"],
+        "bars": ["Missing a bar change", "Missing B flight", "Second flight / LA turn", "Salto dmt min B"],
+        "beam": ["Acro series two flight", "180° leap/jump", "360° turn", "Dmt min B"],
+        "floor": ["Pass with 2 saltos", "Three different saltos", "Last-pass B salto", "Restricted extra D/E"]
       }
     },
     "dp_10": {
@@ -486,15 +622,15 @@
       "label": "Level 10",
       "shortLabel": "L10",
       "minAge": 9,
-      "helper": "Terminal DP level. 3A+3B+2C plus bonus and composition.",
+      "helper": "Terminal DP level. 3A+3B+2C, SV 9.2 + CC max 0.30. Bonus cap 0.50. Extra +0.10 if 10.0 SV and ≥0.60 TB plus named E.",
       "codeCycle": "2026-2030 optional",
-      "ship": "stub",
-      "valueParts": { "A": 3, "B": 3, "C": 2, "startValue": 9.2 },
+      "ship": "full",
+      "valueParts": { "A": 3, "B": 3, "C": 2, "startValue": 9.2, "compositionCreditMax": 0.3, "bonusMax": 0.5 },
       "mobility": {
         "aa": null,
         "ies": null,
         "nextLevel": null,
-        "note": "No higher Development Program mobility level."
+        "note": "No higher Development Program mobility level. Live sanctioned meets only. State qualifier scores are not national mobility."
       },
       "numberThatMatters": {
         "type": "execution_composition",
@@ -506,13 +642,43 @@
         { "id": "recruiting", "label": "Recruiting card" },
         { "id": "one_event", "label": "Stop one event from sinking the AA" }
       ],
-      "proofLine": "Level 10 is the end of the Development Program. The number that matters is execution, not a mobility score.",
+      "proofLine": "L10 is 3A+3B+2C, SV 9.2. CC max +0.30. Bonus cap 0.50. Extra +0.10 (not in SV) if the exercise has 10.0 SV and ≥0.60 total bonus plus a named E (UB: single-bar D release or any E release; BB: E acro; FX: E acro, not #6.501 2/1).",
       "paywallHeadline": "{name}'s Level 10 season plan is ready",
+      "specialRequirements": {
+        "vault": [
+          "Source: 2026–2030 Vault Values Level 10 (docs/usag/dp-appendix1-l10-vault.pdf). Chart is the value table. Vault not on this page = VOID. Coach names which chart vault she competes. No next-level mobility number.",
+          "Bonus: all 10.0 SV vaults performed successfully (no fall or spot) earn +0.10 EXCEPT asterisks: 2.302, 2.311, 3.407, 4.306, 4.309, 4.403, 4.407, 5.301, 5.408, 5.409. Grp 3: 90–180° LA turn allowed in first flight. Grp 5 described as FF with 1/1 on: allow ¾–1/1 in first flight.",
+          "Grp 1 SVs: 1.101 8.1; 1.102 8.2; 1.103 8.1; 1.104 8.2; 1.105 8.2; 1.106 7.0; 1.109 8.2; 1.110 8.3; 1.111 7.1; 1.201 8.8; 1.202 9.2; 1.203 8.8; 1.205 9.1; 1.206 8.7; 1.207 8.9; 1.208 9.1; 1.209 8.9; 1.211 8.3; 1.301 9.8; 1.306 9.6; 1.307 9.7; 1.308 9.8; 1.311 8.8; 1.402 / 1.504 10.0.",
+          "Grp 2: 2.301 9.8; 2.302 *10.0; 2.303 9.9; 2.304 9.9; 2.310 9.9; 2.311 *10.0; 2.402–2.411 10.0; 2.501–2.509 10.0; 2.607 / 2.609 10.0. Grp 3: 3.201 9.4; 3.301 9.5; 3.302 9.8; 3.303 9.5; 3.304 9.7; 3.305 9.6; 3.306 9.7; 3.307 9.8; 3.308 9.8; 3.402 10.0; 3.403 9.9; 3.404 10.0; 3.405 9.9; 3.407 *10.0; 3.504–3.509 / 3.605 10.0.",
+          "Grp 4: 4.101 7.0; 4.102 7.7; 4.201 8.9; 4.202 9.1; 4.203 9.4; 4.301 9.7; 4.303 9.8; 4.304 9.5; 4.305 9.7; 4.306 *10.0; 4.307 9.8; 4.308 9.9; 4.309 *10.0; 4.403 *10.0; 4.406 10.0; 4.407 *10.0; 4.503 / 4.506 / 4.508 / 4.606 10.0. Grp 5: 5.101 8.9; 5.102 9.1; 5.107 9.2; 5.108 8.2; 5.201 9.2; 5.202 9.4; 5.207 9.3; 5.301 *10.0; 5.312 9.9; 5.401–5.406 10.0; 5.408 *10.0; 5.409 10.0; 5.410 10.0; 5.501 / 5.505 / 5.509–5.511 10.0."
+        ],
+        "bars": [
+          "SR 1: Min one C flight",
+          "SR 2: 2nd different flight min B",
+          "SR 3: Min C elem with LA turn (no mt/dmt)",
+          "SR 4: Salto dmt min C",
+          "CC max +0.30: 2 different D/E releases +0.20 (or +0.10 for only one); D or ↑ dmt OR D/E or ↑ + C dmt +0.10"
+        ],
+        "beam": [
+          "SR 1: Acro series — 2 dir. connected flight, min 1 C; OR E-flight + A non-flight (no mt/dmt)",
+          "SR 2: Leap/jump requiring 180° cross or side split",
+          "SR 3: Min 360° turn",
+          "SR 4: Aerial/salto dmt min C OR min B connected in acro series with C flight or connected to C acro/dance",
+          "CC max +0.30: 2 different D/E acro VP (no dmt) +0.20 (or +0.10 for only one); D/E dmt or min B acro flight or C dance dir. connected to C dmt +0.10"
+        ],
+        "floor": [
+          "SR 1: One acro pass with 2 saltos (same or different) dir or indir connected with flight",
+          "SR 2: 3 different saltos (no aerials)",
+          "SR 3: Dance passage min 2 different Grp 1 elems, one a LEAP 180°",
+          "SR 4: Min C salto last acro pass initiated",
+          "CC max +0.30: 2 different D or ↑ saltos and 1 C (or 1 E and 1 D) +0.20; dance 3 different C VPs or 1 D + 1 C dance +0.10"
+        ]
+      },
       "chips": {
-        "vault": ["Start value", "Stuck vs bonus vault"],
-        "bars": ["Missing SR", "Bonus connections", "Composition credit"],
-        "beam": ["Missing SR", "Bonus connections", "Composition credit"],
-        "floor": ["Missing SR", "Bonus connections", "Recruiting video"]
+        "vault": ["Appendix 1 L10 SV chart", "+0.10 on most 10.0 (asterisks excluded)", "Restricted vault = VOID"],
+        "bars": ["Missing C flight", "Second different flight min B", "C with LA turn", "Salto dmt min C"],
+        "beam": ["Acro series min C flight (or E+A)", "180° leap/jump", "360° turn", "Dmt min C (or connected B)"],
+        "floor": ["Pass with 2 saltos", "Three different saltos", "Last-pass C salto", "Extra +0.10 bonus path"]
       }
     },
     "xcel_bronze": {
@@ -522,14 +688,15 @@
       "label": "Xcel Bronze",
       "shortLabel": "Bronze",
       "minAge": 5,
-      "helper": "4 A value parts. Beginner. No mobility score to enter.",
+      "helper": "4 A, SV 10.0. Min age 5th birthday. Missing SR −0.50 off SV. Not JO.",
       "codeCycle": "2022-2028 Xcel",
-      "ship": "stub",
+      "ship": "full",
       "valueParts": { "A": 4, "B": 0, "C": 0, "startValue": 10.0 },
       "mobility": {
         "aa": null,
         "ies": null,
-        "note": "No national mobility score to enter Bronze."
+        "fromDivision": "DP 1–2",
+        "note": "No mobility score to enter Bronze. Live sanctioned meets only. Entry from DP 1–2 requires AA at ≥1 sanctioned meet at that DP level. Xcel cannot satisfy Development Program mobility."
       },
       "numberThatMatters": {
         "type": "srs",
@@ -540,13 +707,41 @@
         { "id": "fun", "label": "Stay in this division happily" },
         { "id": "next", "label": "Move up when the hours make sense" }
       ],
-      "proofLine": "This is not the JO routine. Judges want Bronze special requirements and allowed skills.",
+      "proofLine": "Bronze is 4 A, SV 10.0. Missing SR −0.50 off SV. Restricted skill = no VP, −0.50 off SV. This is not the JO routine. Xcel cannot satisfy DP mobility. DP cast-angle deductions are not used in Xcel.",
       "paywallHeadline": "{name}'s Xcel Bronze plan is ready",
+      "specialRequirements": {
+        "vault": [
+          "Option 1: stretch jump onto mat THEN kick to HS fall to flat back — SV 9.0 combined (1A 4.5 + 1B 4.5)",
+          "Option 2: jump to HS fall to flat back (no repulsion required) — SV 10.0",
+          "Mat stack 16–48\" (±1\"). Alternative springboard allowed."
+        ],
+        "bars": [
+          "SR 1: Mount — low bar only",
+          "SR 2: Cast (hips must leave bar) — not mount or dismount",
+          "SR 3: 360° circling skill — not mount or dismount",
+          "SR 4: Dismount — low bar only, no saltos",
+          "Restricted: no B or higher VP; no skills on HB; no salto dismounts; no LB giants. VP allowed: any A (0.10). Extra swing: no. Warm-up 30s."
+        ],
+        "beam": [
+          "SR 1: Min ½ turn on one or two feet",
+          "SR 2: One jump or leap (not mt/dmt) — no split angle required",
+          "SR 3: One non-flight acro (must start and finish on beam)",
+          "SR 4: Dismount — no saltos or aerials",
+          "Restricted: no B or higher VP; no salto or aerial dismounts; no walkovers. VP allowed: any A (0.10). Time 45s."
+        ],
+        "floor": [
+          "SR 1: Min 2 directly connected acro (with or without flight)",
+          "SR 2: 2nd acro pass — min one acro (with or without flight) — may NOT be the same pass as SR 1",
+          "SR 3: Dance passage min 2 different Grp 1, one a leap min 60° cross/side split",
+          "SR 4: Min ½ turn on one foot",
+          "Restricted: no B or higher VP except straddle jump & side leap 60–180° = A; no saltos/aerials; max 2 acro flight per routine. Dive roll does NOT fulfill flight SR. RO rebound backward roll IS an acro connection. Split SR/VP: within 20° of 60°. Time 45s."
+        ]
+      },
       "chips": {
-        "vault": ["Allowed beginner vault", "Run / board"],
-        "bars": ["Low-bar mount", "Cast depth", "Circling skill", "No-salto dismount"],
-        "beam": ["½ turn", "Jump or leap", "Non-flight acro"],
-        "floor": ["Missing an A", "Acro", "Dance"]
+        "vault": ["Stretch jump + kick to HS flat back (SV 9.0)", "Jump to HS flat back (SV 10.0)", "Mat height 16–48\""],
+        "bars": ["LB mount", "Cast (hips leave bar)", "360° circle (not mt/dmt)", "LB dismount (no salto)"],
+        "beam": ["½ turn 1 or 2 feet", "Jump/leap (no split angle)", "Non-flight acro", "Dmt no salto/aerial"],
+        "floor": ["2 connected acro (SR 1)", "2nd pass different from SR 1", "Dance leap min 60°", "½ turn"]
       }
     },
     "xcel_silver": {
@@ -556,14 +751,15 @@
       "label": "Xcel Silver",
       "shortLabel": "Silver",
       "minAge": 6,
-      "helper": "5 A value parts. No mobility score to enter.",
+      "helper": "5 A, SV 10.0. Min age 6. Extra twist on vault option 2 = VOID. Missing SR −0.50.",
       "codeCycle": "2022-2028 Xcel",
-      "ship": "stub",
+      "ship": "full",
       "valueParts": { "A": 5, "B": 0, "C": 0, "startValue": 10.0 },
       "mobility": {
         "aa": null,
         "ies": null,
-        "note": "No national mobility score to enter Silver."
+        "fromDivision": "DP 1–3",
+        "note": "No mobility score to enter Silver. Live sanctioned meets only. Entry from DP 1–3 requires AA at ≥1 sanctioned meet at that DP level. Xcel cannot satisfy Development Program mobility."
       },
       "numberThatMatters": {
         "type": "srs",
@@ -574,13 +770,41 @@
         { "id": "fun", "label": "Stay in this division happily" },
         { "id": "next", "label": "Move up when the hours make sense" }
       ],
-      "proofLine": "This is not the JO routine. Judges want Silver special requirements and allowed skills.",
+      "proofLine": "Silver is 5 A, SV 10.0. Missing SR −0.50 off SV. Restricted skill = no VP, −0.50 off SV. Not JO. Xcel cannot satisfy DP mobility. DP cast-angle deductions are not used in Xcel.",
       "paywallHeadline": "{name}'s Xcel Silver plan is ready",
+      "specialRequirements": {
+        "vault": [
+          "Option 1: handspring over the sideways mat stack — SV 10.0",
+          "Option 2: ¼–½ (90–180°) turn on, repulsion off to feet, landing facing the stack — SV 10.0. Additional twist = VOID.",
+          "Mat stack sideways 24–48\" (±1\"). Alternative springboard allowed. Min 6'×12'×4\" landing mat behind the stack."
+        ],
+        "bars": [
+          "SR 1: Mount",
+          "SR 2: Cast to a min of 45° below horizontal — not mount or dismount",
+          "SR 3: 360° circling skill — not mount or dismount",
+          "SR 4: Dismount from LB or HB — no saltos",
+          "Restricted: no B or higher VP; no giants (LB or HB); no salto dismounts. VP allowed: any A (0.10). Extra swing: no. Warm-up 45s."
+        ],
+        "beam": [
+          "SR 1: Min ½ turn on one foot",
+          "SR 2: One jump or leap min 90° cross or side split (not mt/dmt)",
+          "SR 3: One non-flight acro (must start and finish on beam)",
+          "SR 4: Dismount",
+          "Restricted: no B acro VP; no C or higher VP. VP allowed: any A, or B Dance. Split SR/VP: within 20° of 90°. Time 50s."
+        ],
+        "floor": [
+          "SR 1: Min 2 directly connected acro, one must have flight",
+          "SR 2: 2nd pass — either 2 connected acro (w/ or w/o flight) OR one acro flight — may NOT be the same pass as SR 1",
+          "SR 3: Dance passage min 2 different Grp 1, one a leap min 90° cross/side split",
+          "SR 4: Min 1/1 turn on one foot",
+          "Restricted: no B acro VP; no C or higher; max one salto/aerial per routine. VP allowed: any A, or B Dance. Dive roll does NOT fulfill flight SR. RO rebound backward roll IS an acro connection. Split SR/VP: within 20° of 90°. Time 1:00 (Aug 2026 chart: 45s struck, 1:00 highlighted)."
+        ]
+      },
       "chips": {
-        "vault": ["Allowed vault", "Landing"],
-        "bars": ["Mount", "Cast to 45° below horizontal", "360° circle", "Dismount (no salto)"],
-        "beam": ["Turn", "Leap/jump", "Acro"],
-        "floor": ["Missing an A", "Acro", "Dance"]
+        "vault": ["Handspring over sideways stack (SV 10)", "¼–½ on repulsion off (extra twist VOID)", "Mat 24–48\""],
+        "bars": ["Mount", "Cast min 45° below horizontal", "360° circle", "LB or HB dmt (no salto)"],
+        "beam": ["½ turn on one foot", "Leap/jump min 90°", "Non-flight acro", "Dismount"],
+        "floor": ["2 connected acro, one flight", "2nd pass different from SR 1", "Dance leap min 90°", "1/1 turn"]
       }
     },
     "xcel_gold": {
@@ -590,46 +814,62 @@
       "label": "Xcel Gold",
       "shortLabel": "Gold",
       "minAge": 7,
-      "helper": "6 A value parts. Not a JO Level 5 clone.",
+      "helper": "6 A, SV 10.0 (9.5 if alt springboard). Not a JO Level 5 clone. Missing SR −0.50.",
       "codeCycle": "2022-2028 Xcel",
       "ship": "full",
       "valueParts": { "A": 6, "B": 0, "C": 0, "startValue": 10.0 },
       "mobility": {
         "aa": null,
         "ies": null,
-        "note": "No national score to enter Gold. 32.00 AA at Gold (or 8.50 IES) is the typical gate into Platinum."
+        "fromDivision": "DP 1–4",
+        "nextLevel": "Platinum",
+        "note": "No score to enter Gold. Live sanctioned meets only. Entry from DP 1–4 requires AA at ≥1 sanctioned meet at that DP level. 32.00 AA at Gold OR 8.5 IES is the gate into Platinum. Xcel cannot satisfy Development Program mobility."
       },
       "numberThatMatters": {
         "type": "srs",
         "label": "Special requirements + 6 A skills",
-        "moveUpTarget": 32.0
+        "moveUpTarget": 32.0,
+        "ies": 8.5
       },
       "goals": [
         { "id": "srs", "label": "Hit special requirements" },
         { "id": "fun", "label": "Stay in Gold happily" },
-        { "id": "platinum", "label": "Build toward Platinum (32.00 AA)" }
+        { "id": "platinum", "label": "Build toward Platinum (32.00 AA or 8.5 IES)" }
       ],
-      "proofLine": "Gold is 6 A value parts + special requirements, not a JO Level 5 clone.",
+      "proofLine": "Gold is 6 A, SV 10.0 (9.5 if alternative springboard). Missing SR −0.50 off SV. Restricted skill = no VP, −0.50 off SV. Not a JO Level 5 clone. Xcel cannot satisfy DP mobility. DP cast-angle deductions are not used in Xcel.",
       "paywallHeadline": "{name}'s Xcel Gold plan is ready",
       "specialRequirements": {
-        "vault": ["Allowed Gold vault — not a JO table clone"],
-        "bars": [
-          "Clear support to horizontal",
-          "Two 360° circling skills",
-          "Dismount"
+        "vault": [
+          "Source: Xcel Appendix 2 vault chart, values through August 2025 (docs/usag/appendix2.pdf). Gold column says Allowed = 10.0, or 9.5 with alt springboard.",
+          "Allowed (white cells): 1.101 Handspring; 1.102 HS → ½ off; 1.103 Yamashita; 1.104 Yama → ½ off; 1.105 ½ on → ½ off OR ¼ on → ¾ off; 1.106 ¼–½ on → repulsion off facing table; 1.108 ¼ on → ¼ off facing away; 1.201 HS → 1/1; 1.203 Yama → 1/1; 1.206 ½ on → 1/1 off OR ¼ on → 1¼ off; 1.207 1/1 on → HS or Yama off; 1.208 1/1 on → ½ off.",
+          "Black on Gold = not allowed: no Tsuk, no Yurchenko, no 1.109–1.111 / 1.202 / 1.205. Coach names which allowed vault. Any other vault = VOID."
         ],
-        "beam": ["1/1 turn", "Two different Group 2 / 120° dance", "Acro"],
-        "floor": ["6 A value parts", "Acro series", "Dance / 120° split"]
+        "bars": [
+          "SR 1: A skill finishing in clear support at a minimum of horizontal (not mount/dismount)",
+          "SR 2/3: Two 360° circling skills (not mt/dmt) must be one of: two directly connected same circling elements (either bar); OR two different circling elements connected or isolated (either bar); OR two of the same circling element, one on LB and one on HB",
+          "SR 4: Dismount — high bar",
+          "Restricted: no C or higher VP. B exceptions: no giants (LB or HB); no release skills with bar change. VP allowed: any A or B (0.10 / 0.30) except those B exceptions. Extra swing: no. Warm-up 1:00."
+        ],
+        "beam": [
+          "SR 1: Min 1/1 turn on one foot",
+          "SR 2: Two different Group 2 elements — one with min 120° cross or side split (isolated or in a series)",
+          "SR 3: Two acro elements — with or without flight (isolated or series) — one must achieve or pass through inverted vertical (must start and finish on beam)",
+          "SR 4: Dismount",
+          "Restricted: no C or higher VP. VP allowed: any A or B. Split SR/VP: within 20° of 120°. Time 1:00."
+        ],
+        "floor": [
+          "SR 1: Min 2 directly connected acro FLIGHT elements",
+          "SR 2: 2nd pass — either a 2nd connection of min 2 directly connected acro flight OR one aerial or salto — may NOT be the same pass as SR 1",
+          "SR 3: Dance passage min 2 different Grp 1, one a leap min 120°",
+          "SR 4: Min 1/1 turn on one foot",
+          "Restricted: no B twisting saltos; no C or higher VP. VP allowed: any A or B except B twisting saltos. Dive roll does NOT fulfill flight SR. Split SR/VP: within 20° of 120°. Time 1:00."
+        ]
       },
       "chips": {
-        "vault": ["Allowed Gold vault", "Start value if alt springboard"],
-        "bars": [
-          "Skill finishing in clear support at horizontal",
-          "Two 360° circling skills",
-          "Dismount"
-        ],
-        "beam": ["1/1 turn", "Two different Group 2 / 120° dance", "Acro"],
-        "floor": ["Missing an A", "Acro series", "Dance / 120° split"]
+        "vault": ["Appendix 2 Gold list (HS/Yama family)", "10.0, or 9.5 alt board", "No Tsuk / no Yurchenko"],
+        "bars": ["Clear support min horizontal (not mt/dmt)", "Two 360° circles as specified", "HB dismount"],
+        "beam": ["1/1 turn on one foot", "Two different Grp 2, one min 120°", "Two acro, one through inverted vertical", "Dismount"],
+        "floor": ["2 connected acro flight (SR 1)", "2nd pass different from SR 1", "Dance leap min 120°", "1/1 turn"]
       }
     },
     "xcel_platinum": {
@@ -639,7 +879,7 @@
       "label": "Xcel Platinum",
       "shortLabel": "Platinum",
       "minAge": 8,
-      "helper": "6A+1B. Typical entry: 32.00 AA at Gold or 8.50 IES.",
+      "helper": "6A+1B, SV 10.0. Entry: 32.00 AA at Gold OR 8.5 IES. Alt springboard VOIDS vault.",
       "codeCycle": "2022-2028 Xcel",
       "ship": "full",
       "valueParts": { "A": 6, "B": 1, "C": 0, "startValue": 10.0 },
@@ -648,11 +888,11 @@
         "ies": 8.5,
         "fromDivision": "Gold",
         "nextLevel": "Diamond",
-        "note": "Typical national gate into Platinum is 32.00 AA at Gold or 8.50 IES. Confirm current R&P in code comments."
+        "note": "Entry into Platinum: 32.00 AA at Gold OR 8.5 IES (live sanctioned only). IES = athletes who compete three events or less (R&P Ch.7). Chart writes 8.5 IES — no extra formula. Entry from DP 5, 6, or 7 requires AA at ≥1 sanctioned meet at that DP level. Gate into Diamond is 32.00 AA at Platinum OR 8.5 IES. Xcel cannot satisfy Development Program mobility."
       },
       "numberThatMatters": {
         "type": "mobility_aa_or_ies",
-        "label": "Hit SRs + the B · 32.00 if moving up",
+        "label": "32.00 AA or 8.5 IES to Diamond",
         "target": 32.0,
         "ies": 8.5
       },
@@ -661,13 +901,41 @@
         { "id": "srs", "label": "Hit special requirements" },
         { "id": "diamond", "label": "Build toward Diamond" }
       ],
-      "proofLine": "Platinum is the first real B-skill hunt in Xcel — not a JO Level 6 clone.",
+      "proofLine": "Platinum is 6A+1B, SV 10.0. Missing SR −0.50 off SV. Restricted skill = no VP, −0.50 off SV. Floor dance leap is 155° (Aug 2026 chart: 155° highlighted, 150° struck). Not a JO Level 6 clone. Alternative springboard VOIDS vault. Xcel cannot satisfy DP mobility.",
       "paywallHeadline": "{name}'s Xcel Platinum plan is ready",
+      "specialRequirements": {
+        "vault": [
+          "Source: Xcel Appendix 2 (Aug 2025). Platinum column is a start value, not a blank. Alt springboard = VOID.",
+          "HS/Yama with SV: 1.101 HS 9.8; 1.102 HS ½ off 9.9; 1.103 Yama 9.8; 1.104 Yama ½ off 9.9; 1.105 ½–½ or ¼–¾ 9.9; 1.106 ¼–½ on repulsion 9.7; 1.108 ¼–¼ away 9.7; 1.201 HS 1/1 10.0; 1.203 Yama 1/1 10.0; 1.206 ½ on 1/1 10.0; 1.207 1/1 on HS/Yama 10.0; 1.208 1/1 on ½ off 10.0.",
+          "Also allowed: 4.101 RO FF on → repulsion 9.8; 4.102 RO FF on → ½ off 9.9; 4.201 RO FF on → 1/1 off 10.0. Black cells (Tsuk, most Yurchenko, 1.109–1.111, 1.202, 1.205) are not Platinum vaults. Coach names the vault from this chart."
+        ],
+        "bars": [
+          "SR 1: A skill finishing in a clear support ABOVE horizontal (not mount or dismount)",
+          "SR 2: 360° circling skill (not mount or dismount)",
+          "SR 3: Kip",
+          "SR 4: Dismount — high bar, min A",
+          "Restricted: no C or higher VP except Clear Hip HS / Stalder bkwd to HS / Pike sole circle bkwd to HS (all without turn). VP: A 0.10, B 0.30. Extra swing: yes — exception: one tap/underswing-counterswing may receive an A VP without the 0.30 extra-swing deduction. Long hang pullover counts as a 360° circling skill only if preceded by a cast (Platinum & Diamond). Warm-up 1:30."
+        ],
+        "beam": [
+          "SR 1: Min 1/1 turn on one foot",
+          "SR 2: Dance series — two Grp 1/2/3 elements (same or different) AND one jump or leap min 120° cross or side split (isolated or series)",
+          "SR 3: One acro flight OR acro series (with or without flight) — min one skill must achieve or pass through vertical (excluding mt/dmt; must start and finish on beam)",
+          "SR 4: Dismount",
+          "Restricted: no C acro VP; no D or higher VP. VP allowed: any A, B, or C Dance. Split SR/VP: within 20° of 120°. Time 1:15."
+        ],
+        "floor": [
+          "SR 1: Min 2 directly connected acro flight with A or B salto",
+          "SR 2: 2nd pass — either a 2nd connection of min 2 directly connected acro flight OR one B salto — may NOT be the same pass as SR 1",
+          "SR 3: Dance passage min 2 different Grp 1, one a leap min 155° cross or side split (Aug 2026 chart: 155° highlighted, 150° struck)",
+          "SR 4: Min 1/1 turn on one foot",
+          "Restricted: no C acro VP; no D or higher VP. VP allowed: any A, B, or C Dance. Split SR/VP: within 20° of 155°. Time 1:30 (Aug 2026 chart: 1:15 struck, 1:30 highlighted)."
+        ]
+      },
       "chips": {
-        "vault": ["Allowed Platinum vault", "Start value"],
-        "bars": ["Kip", "Circling skill", "Missing the B", "HB dismount"],
-        "beam": ["1/1 turn", "Dance series + 120° split", "Missing the B", "Acro"],
-        "floor": ["Missing the B", "SRs", "Dance series"]
+        "vault": ["Appendix 2 Platinum SV list", "RO-FF repulsion / ½ / 1/1 allowed", "Alt board VOID · no Tsuk"],
+        "bars": ["Clear support ABOVE horizontal", "360° circle", "Kip", "HB dmt min A"],
+        "beam": ["1/1 turn", "Dance series AND leap/jump min 120°", "Acro flight OR series through vertical", "Dismount"],
+        "floor": ["2 connected flight with A/B salto", "2nd pass different from SR 1", "Dance leap min 155°", "1/1 turn"]
       }
     },
     "xcel_diamond": {
@@ -677,20 +945,20 @@
       "label": "Xcel Diamond",
       "shortLabel": "Diamond",
       "minAge": 9,
-      "helper": "5A+2B. Typical entry: 32.00 AA at Platinum or 8.50 IES.",
+      "helper": "5A+2B, SV 10.0. Entry: 32.00 AA at Platinum OR 8.5 IES. Beam/floor leap 155° (150° is the struck old number).",
       "codeCycle": "2022-2028 Xcel",
-      "ship": "stub",
+      "ship": "full",
       "valueParts": { "A": 5, "B": 2, "C": 0, "startValue": 10.0 },
       "mobility": {
         "aa": 32.0,
         "ies": 8.5,
         "fromDivision": "Platinum",
         "nextLevel": "Sapphire",
-        "note": "Typical national gate into Diamond is 32.00 AA at Platinum or 8.50 IES."
+        "note": "Entry into Diamond: 32.00 AA at Platinum OR 8.5 IES (live sanctioned only). IES = athletes who compete three events or less (R&P Ch.7). Chart writes 8.5 IES — no extra formula. Entry from DP 7 or 8 requires AA at ≥1 sanctioned meet at that DP level. Gate into Sapphire is 32.00 AA at Diamond OR 8.5 IES. Xcel cannot satisfy Development Program mobility."
       },
       "numberThatMatters": {
         "type": "mobility_aa_or_ies",
-        "label": "SRs + 2 Bs · 32.00 if moving up",
+        "label": "32.00 AA or 8.5 IES to Sapphire",
         "target": 32.0,
         "ies": 8.5
       },
@@ -699,13 +967,41 @@
         { "id": "bs", "label": "Own both Bs" },
         { "id": "sapphire", "label": "Build toward Sapphire" }
       ],
-      "proofLine": "Diamond is 5A+2B. This is not a JO optional checklist.",
+      "proofLine": "Diamond is 5A+2B, SV 10.0. Missing SR −0.50 off SV. Max one D (no bonus). No E. Beam/floor dance leap is 155° (Aug 2026 chart: 155° highlighted, 150° struck). Not a JO optional checklist. Xcel cannot satisfy DP mobility.",
       "paywallHeadline": "{name}'s Xcel Diamond plan is ready",
+      "specialRequirements": {
+        "vault": [
+          "Source: Xcel Appendix 2 (Aug 2025). Diamond column is a start value. Alt springboard = VOID.",
+          "Adds vs Platinum: 1.109–1.111 (HS from board); 1.202 HS 1½ 10.0; 1.205 ½ on 1½ 10.0; 1.209 / 1.211 board entries; 1.301 HS 2/1 10.0; 1.306 ½ on 2/1 10.0; 1.311 board 1/1 off 10.0; Tsuk 3.201 tuck / 3.303 pike / 3.304 layout (10.0); Yurchenko 4.101–4.203, 4.304–4.305; 5.101–5.102, 5.201–5.202, 5.312 (½ on 2/1).",
+          "Still black on Diamond: 1.307 1/1 on 1/1 off; 4.301 RO FF 2/1; 5.107 / 5.108 / 5.207. Coach names the vault from this chart. Unlisted = VOID."
+        ],
+        "bars": [
+          "SR 1: Skill finishing in a clear support at a min of 45° from vertical (not mount or dismount)",
+          "SR 2: Min B 360° circling skill (not in the mount or dismount)",
+          "SR 3: Additional min B — a turn OR 2nd 360° circling skill (same as or different from SR 2) not in mt/dmt, OR a release not in the dismount",
+          "SR 4: Salto or hecht dismount from HB min A, OR any dismount min B from the high bar",
+          "Restricted: max one D VP (no bonus); no E VP. VP allowed: any A, B, C, and 1 D. Extra swing: yes. Long hang pullover counts as a 360° circling skill only if preceded by a cast (Platinum & Diamond). Warm-up 2:00."
+        ],
+        "beam": [
+          "SR 1: Min 1/1 turn on one foot",
+          "SR 2: Dance series — two Grp 1/2/3 elements AND one jump or leap min 155° cross or side split (Aug 2026 chart: 155° highlighted, 150° struck)",
+          "SR 3: Acro series (with or without flight) — min one skill must achieve or pass through vertical (excl mt/dmt) AND one acro flight (isolated or series); must start and finish on beam",
+          "SR 4: Dismount — salto or aerial",
+          "Restricted: max one D VP (no bonus); no E VP. VP allowed: any A, B, C, and 1 D. Split SR/VP: within 20° of 155°. Time 1:15."
+        ],
+        "floor": [
+          "SR 1: Two separate acro flight passes, each with min 2 directly connected acro flight OR one such pass AND one separate/isolated C salto",
+          "SR 2: Two different saltos (isolated or in connection) — one must be min B (may be included in SR 1)",
+          "SR 3: Dance passage min 2 different Grp 1, one a leap min 155° cross or side split (Aug 2026 chart: 155° highlighted, 150° struck)",
+          "SR 4: Min B turn on one foot",
+          "Restricted: max one D VP (no bonus); no E VP. VP allowed: any A, B, C, and 1 D. Split SR/VP: within 20° of 155°. Time 1:30."
+        ]
+      },
       "chips": {
-        "vault": ["Allowed Diamond vault", "Start value"],
-        "bars": ["Clear support 45° from vertical", "B circling skill", "Missing a B"],
-        "beam": ["1/1 turn", "Dance series + 155° split", "Missing a B"],
-        "floor": ["Missing a B", "SRs"]
+        "vault": ["Appendix 2 Diamond SV list", "Tsuk + Yurchenko on the chart", "Alt board VOID"],
+        "bars": ["Clear support min 45° from vertical", "Min B 360° circle", "Additional min B (turn / 2nd 360 / release)", "Salto/hecht HB dmt min A or any HB dmt min B"],
+        "beam": ["1/1 turn", "Dance series AND leap/jump min 155°", "Acro series through vertical AND one acro flight", "Salto or aerial dmt"],
+        "floor": ["Two flight passes (or one + isolated C salto)", "Two different saltos, one min B", "Dance leap min 155°", "Min B turn"]
       }
     },
     "xcel_sapphire": {
@@ -715,16 +1011,16 @@
       "label": "Xcel Sapphire",
       "shortLabel": "Sapphire",
       "minAge": 12,
-      "helper": "3A+3B+1C. 9.6 SV + up to 0.40 bonus. Min age 12.",
+      "helper": "3A+3B+1C, SV 9.6 + up to 0.40 bonus. Min age 12th birthday. Terminal Xcel division.",
       "codeCycle": "2022-2028 Xcel",
-      "ship": "stub",
+      "ship": "full",
       "valueParts": { "A": 3, "B": 3, "C": 1, "startValue": 9.6, "bonusMax": 0.4 },
       "mobility": {
         "aa": 32.0,
         "ies": 8.5,
         "fromDivision": "Diamond",
         "nextLevel": null,
-        "note": "Typical national gate into Sapphire is 32.00 AA at Diamond or 8.50 IES. Terminal Xcel division."
+        "note": "Entry into Sapphire: 32.00 AA at Diamond OR 8.5 IES (live sanctioned only). IES = athletes who compete three events or less (R&P Ch.7). Chart writes 8.5 IES — no extra formula. Min age 12th birthday (petitions to RXCC and NXCC if under age). Entry from DP 8, 9, or 10 requires AA at ≥1 sanctioned meet at that DP level. No higher Xcel division. Xcel cannot satisfy Development Program mobility."
       },
       "numberThatMatters": {
         "type": "execution_composition",
@@ -735,13 +1031,41 @@
         { "id": "bonus", "label": "Connect bonus" },
         { "id": "hit", "label": "Hit routines" }
       ],
-      "proofLine": "Sapphire starts at 9.6 with up to 0.40 bonus. Still Xcel rules, not JO Level 9.",
+      "proofLine": "Sapphire is 3A+3B+1C, SV 9.6 + up to 0.40 bonus. Missing SR −0.50 off SV. Restricted skill = no VP, −0.50 off SV. No E VP. Still Xcel rules, not JO Level 9. Xcel cannot satisfy DP mobility.",
       "paywallHeadline": "{name}'s Xcel Sapphire plan is ready",
+      "specialRequirements": {
+        "vault": [
+          "Source: Xcel Appendix 2 (Aug 2025). Sapphire column is a start value. Alt springboard = VOID.",
+          "Sapphire opens the remaining white cells vs Diamond: 1.307 1/1 on → 1/1 off 10.0; 4.301 RO FF 2/1 10.0; 5.107 RO FF 1/1 on → ½ off 9.8; 5.108 RO FF 1/1 on → repulsion 9.7; 5.207 RO FF 1/1 on → 1/1 off 10.0. Other SVs are on the same chart (HS family down to 9.0–9.8).",
+          "Black cells are not Sapphire vaults. Coach names the vault from this chart. Unlisted = VOID."
+        ],
+        "bars": [
+          "SR 1: Min B skill finishing in clear support at vertical (not mount or dismount)",
+          "SR 2: Min B 360° circling skill (not in the mount or dismount)",
+          "SR 3: Min B turn OR 2nd 360° circling skill (min B and different from SR 2) not in mt/dmt, OR min B release not in the dismount",
+          "SR 4: Min B dismount OR C skill directly connected to an A salto dismount",
+          "Restricted: no E VP. VP allowed: any A, B, C, D (A 0.10, B 0.30, C 0.50). Extra swing: yes. Warm-up 2:00."
+        ],
+        "beam": [
+          "SR 1: Min 1/1 (360°) turn on one foot",
+          "SR 2: Dance series — two Grp 1/2/3 elements AND one leap or jump requiring 180° cross or side split (isolated or series)",
+          "SR 3: Acro series with min one flight skill (min one skill must pass through or achieve vertical OR be a salto or aerial); must start and finish on beam",
+          "SR 4: Min B dismount OR an acro flight skill directly connected to an A salto/aerial dismount",
+          "Restricted: no E VP. VP allowed: any A, B, C, D. Split SR/VP: within 45° of 180°. Time 1:30."
+        ],
+        "floor": [
+          "SR 1: One acro pass with two saltos, same or different",
+          "SR 2: Three different saltos, one min B",
+          "SR 3: Dance passage min 2 different Grp 1, one a leap requiring a 180° split",
+          "SR 4: Min B turn on one foot",
+          "Restricted: no E VP. VP allowed: any A, B, C, D. Split SR/VP: within 45° of 180°. Time 1:30."
+        ]
+      },
       "chips": {
-        "vault": ["Allowed Sapphire vault", "Start value"],
-        "bars": ["B clear support at vertical", "B circle", "C skill / bonus"],
-        "beam": ["Missing SR", "C / bonus connections"],
-        "floor": ["Missing SR", "C / bonus connections"]
+        "vault": ["Appendix 2 Sapphire SV list", "Opens 2/1 and 1/1-on Yurchenko cells", "Alt board VOID"],
+        "bars": ["B clear support at vertical", "B 360° circle", "B turn / 2nd different 360 / B release", "Min B dmt OR C connected to A salto dmt"],
+        "beam": ["1/1 turn", "Dance series AND leap/jump min 180°", "Acro series min one flight (through vertical or salto/aerial)", "Min B dmt OR flight connected to A salto/aerial dmt"],
+        "floor": ["Acro pass with two saltos", "Three different saltos, one min B", "Dance leap 180°", "Min B turn"]
       }
     },
     "preteam": {

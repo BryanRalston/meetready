@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Button, Chip, Field, Kicker, Progress, Shell, Title } from "@/components/ui";
+import { Button, Chip, Field, IconButton, Kicker, Lede, Progress, Shell, Title } from "@/components/ui";
 import { PipAside } from "@/components/pip";
 import {
   EVENTS,
@@ -103,23 +103,29 @@ function Onboarding() {
   return (
     <Shell flush={flush} className={flush ? "relative" : undefined}>
       {id !== "building" && (
-        <header className={cn("flex items-center gap-3 py-2", flush && "absolute inset-x-0 top-0 z-20 px-5 pt-3")}>
-          <button
-            type="button"
-            onClick={back}
-            className="flex h-11 w-11 items-center justify-center rounded-[12px] text-fg/80"
-            aria-label="Back"
-          >
+        <header
+          className={cn(
+            "flex shrink-0 items-center gap-3 py-1",
+            flush &&
+              "absolute inset-x-0 top-0 z-20 px-5 pt-[max(0.75rem,var(--phone-safe-top))]",
+          )}
+        >
+          <IconButton onClick={back} aria-label="Back" className={flush ? "text-fg" : undefined}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M15 6 9 12l6 6" />
             </svg>
-          </button>
+          </IconButton>
           <Progress value={step + 1} max={STEPS.length} />
-          <span className="w-10 text-right text-[11px] tabular text-subtle">{step + 1}/{STEPS.length}</span>
+          <span className="w-10 text-right text-kicker tabular text-subtle">
+            {step + 1}/{STEPS.length}
+          </span>
         </header>
       )}
 
-      <div className={cn("flex flex-1 flex-col", flush ? "" : "pt-4")}>
+      <div
+        key={id}
+        className={cn("flex min-h-0 flex-1 flex-col", flush ? "" : "quiz-scroll pt-4")}
+      >
         {id === "outcome_require" && (
           <Outcome
             n="01"
@@ -157,10 +163,14 @@ function Onboarding() {
           <div className="rise">
             <Kicker>Gymnast</Kicker>
             <Title>What’s her first name?</Title>
-            <p className="mt-2 mb-8 text-[15px] text-muted">It goes on the plan. Last name stays out of it.</p>
-            <Field label="First name" value={draft.name} onChange={(name) => setDraft({ name })} placeholder="Emma" />
+            <Lede>It goes on the plan. Last name stays out of it.</Lede>
+            <div className="mt-8">
+              <Field label="First name" value={draft.name} onChange={(name) => setDraft({ name })} placeholder="Emma" />
+            </div>
             {draft.name.trim() && (
-              <p className="mt-4 font-display text-[22px] text-accent">{possessive(draft.name)} season plan</p>
+              <p className="mt-4 font-display text-2xl tracking-title text-fg">
+                {possessive(draft.name)} season plan
+              </p>
             )}
           </div>
         )}
@@ -202,13 +212,19 @@ function Onboarding() {
           <div className="rise">
             <Kicker>The upcoming meet</Kicker>
             <Title>When is Saturday, really?</Title>
-            <p className="mt-2 mb-6 text-[15px] text-muted">Name it if you have it. Skip the date if the club hasn’t posted yet.</p>
-            <div className="flex flex-col gap-4">
+            <Lede>Name it if you have it. Skip the date if the club hasn’t posted yet.</Lede>
+            <div className="mt-8 flex flex-col gap-4">
               <Field
                 label="Date"
+                type="date"
                 value={draft.meetDate}
                 onChange={(meetDate) => setDraft({ meetDate })}
-                placeholder="2026-09-25"
+              />
+              <Field
+                label="Session time"
+                value={draft.sessionTime}
+                onChange={(sessionTime) => setDraft({ sessionTime })}
+                placeholder="Optional — 9:00 am"
               />
               <Field
                 label="Meet name"
@@ -226,12 +242,12 @@ function Onboarding() {
           <div className="rise">
             <Kicker>Anxiety map</Kicker>
             <Title>What leaks sleep this week?</Title>
-            <p className="mt-2 mb-6 text-[15px] text-muted">Not a form. This weights the plan. Pick every event that does it.</p>
-            <div className="grid grid-cols-2 gap-2">
+            <Lede>Not a form. This weights the plan. Pick every event that does it.</Lede>
+            <div className="mt-8 grid grid-cols-2 gap-2">
               {EVENTS.map((e) => (
                 <Chip key={e.id} selected={draft.events.includes(e.id)} onClick={() => toggle("events", e.id)}>
                   <span className="block font-medium">{e.label}</span>
-                  <span className={cn("mt-0.5 block text-[12px]", draft.events.includes(e.id) ? "text-bg/70" : "text-subtle")}>
+                  <span className={cn("mt-0.5 block text-meta", draft.events.includes(e.id) ? "text-bg/70" : "text-muted")}>
                     {e.hint}
                   </span>
                 </Chip>
@@ -251,18 +267,23 @@ function Onboarding() {
           <div className="rise">
             <Kicker>Week shape</Kicker>
             <Title>How heavy is the gym week?</Title>
-            <p className="mt-2 mb-6 text-[15px] text-muted">Home drills stay under 12 minutes. We do not add skills in the living room.</p>
-            <div className="flex flex-col gap-2">
+            <Lede>Home drills stay under 12 minutes. We do not add skills in the living room.</Lede>
+            <div className="mt-8 flex flex-col gap-2">
               {hoursOptions().map((h) => (
                 <Chip key={h.id} selected={draft.hours === h.id} onClick={() => setDraft({ hours: h.id })} className="w-full">
                   {h.label}
                 </Chip>
               ))}
             </div>
-            <p className="mt-6 mb-3 text-[12px] uppercase tracking-[0.14em] text-subtle">Also in the mix</p>
-            <div className="flex flex-wrap gap-2">
+            <p className="mt-6 mb-2 text-meta text-muted">Optional extras — same question, not a second form.</p>
+            <div className="flex flex-col gap-2">
               {extrasOptions().map((x) => (
-                <Chip key={x.id} selected={draft.extras.includes(x.id)} onClick={() => toggle("extras", x.id)}>
+                <Chip
+                  key={x.id}
+                  selected={draft.extras.includes(x.id)}
+                  onClick={() => toggle("extras", x.id)}
+                  className="w-full"
+                >
                   {x.label}
                 </Chip>
               ))}
@@ -273,8 +294,8 @@ function Onboarding() {
           <div className="rise">
             <Kicker>Body + brain</Kicker>
             <Title>Anything we should write around?</Title>
-            <p className="mt-2 mb-6 text-[15px] text-muted">Never a diagnosis. It only changes the copy.</p>
-            <div className="flex flex-col gap-2">
+            <Lede>Never a diagnosis. It only changes the copy.</Lede>
+            <div className="mt-8 flex flex-col gap-2">
               {bodyOptions().map((b) => (
                 <Chip key={b.id} selected={draft.body.includes(b.id)} onClick={() => toggle("body", b.id)} className="w-full">
                   {b.label}
@@ -287,8 +308,8 @@ function Onboarding() {
           <div className="rise">
             <Kicker>Saturday</Kicker>
             <Title>What does meet morning actually look like?</Title>
-            <p className="mt-2 mb-6 text-[15px] text-muted">Identity, not demographics. One true thing.</p>
-            <div className="flex flex-col gap-2">
+            <Lede>Identity, not demographics. One true thing.</Lede>
+            <div className="mt-8 flex flex-col gap-2">
               {PANIC_OPTIONS.map((p) => (
                 <Chip
                   key={p.id}
@@ -320,12 +341,17 @@ function Onboarding() {
             onDone={() => navigate({ to: "/paywall" })}
           />
         )}
-
-        {pip && id !== "building" && !id.startsWith("outcome") && <PipAside pose={pip.pose}>{pip.text}</PipAside>}
       </div>
 
       {id !== "building" && (
-        <div className={cn("pt-6", flush && "absolute inset-x-0 bottom-0 z-20 px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]")}>
+        <div
+          className={cn(
+            "quiz-dock",
+            flush &&
+              "absolute inset-x-0 bottom-0 z-20 bg-transparent px-5 pb-[max(1.25rem,var(--phone-safe-bottom))] pt-0",
+          )}
+        >
+          {pip && !id.startsWith("outcome") && <PipAside pose={pip.pose}>{pip.text}</PipAside>}
           <Button className="w-full" disabled={!canNext} onClick={next}>
             Continue
           </Button>
@@ -348,9 +374,9 @@ function Outcome({ n, img, title, body }: { n: string; img: string; title: strin
       <img src={img} alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="hero-scrim absolute inset-0" />
       <div className="relative z-10 mt-auto px-5 pb-28 pt-24">
-        <p className="mb-3 font-mono text-[11px] tracking-[0.18em] text-fg/55">{n} · Built for JO + Xcel families</p>
-        <h1 className="font-display text-[34px] font-medium leading-[1.08] tracking-[-0.03em]">{title}</h1>
-        <p className="mt-4 max-w-[34ch] text-[15px] leading-relaxed text-fg/80">{body}</p>
+        <p className="mb-3 font-sans text-kicker tracking-kicker text-fg/55">{n} · Built for JO + Xcel families</p>
+        <h1 className="font-display text-title font-medium leading-title tracking-title">{title}</h1>
+        <p className="mt-4 max-w-[34ch] text-body leading-relaxed text-fg/80">{body}</p>
       </div>
     </div>
   );
@@ -373,12 +399,12 @@ function Picker({
     <div className="rise">
       <Kicker>{kicker}</Kicker>
       <Title>{title}</Title>
-      <div className="mt-7 flex flex-col gap-2">
+      <div className="mt-8 flex flex-col gap-2">
         {options.map((o) => (
           <Chip key={o.id} selected={value === o.id} onClick={() => onChange(o.id)} className="w-full">
             <span className="block font-medium">{o.label}</span>
             {o.hint && (
-              <span className={cn("mt-0.5 block text-[12px] leading-snug", value === o.id ? "text-bg/70" : "text-subtle")}>
+              <span className={cn("mt-0.5 block text-meta leading-snug", value === o.id ? "text-bg/70" : "text-subtle")}>
                 {o.hint}
               </span>
             )}
@@ -403,18 +429,18 @@ function LevelPicker({
     <div className="rise">
       <Kicker>Level</Kicker>
       <Title>Which level or division?</Title>
-      <p className="mt-2 mb-5 text-[14px] text-muted">Every JO level and every Xcel division. Full packs and stubs are labeled honestly.</p>
-      <div className="flex max-h-[52dvh] flex-col gap-2 overflow-y-auto pr-1">
+      <Lede>Every JO level and every Xcel division ships an SR or skill map. Pre-team is a decision pack.</Lede>
+      <div className="mt-8 flex flex-col gap-2 pb-2">
         {packs.map((p) => (
           <Chip key={p.id} selected={value === p.id} onClick={() => onChange(p.id)} className="w-full">
             <span className="flex items-baseline justify-between gap-3">
               <span className="font-medium">{p.label}</span>
-              <span className={cn("font-mono text-[11px]", value === p.id ? "text-bg/60" : "text-subtle")}>
+              <span className={cn("font-sans text-kicker tabular", value === p.id ? "text-bg/70" : "text-muted")}>
                 {p.ship === "full" ? "full pack" : "stub pack"}
                 {p.minAge ? ` · ${p.minAge}+` : ""}
               </span>
             </span>
-            <span className={cn("mt-1 block text-[12px] leading-snug", value === p.id ? "text-bg/70" : "text-subtle")}>
+            <span className={cn("mt-1 block text-meta leading-snug", value === p.id ? "text-bg/70" : "text-muted")}>
               {p.helper}
             </span>
           </Chip>
@@ -444,22 +470,24 @@ function ChipAudit({
     <div className="rise">
       <Kicker>Audit</Kicker>
       <Title>What’s leaking points — or sleep?</Title>
-      <p className="mt-2 mb-5 text-[14px] text-muted">Chips from her {pack.shortLabel} pack. Tap what isn’t consistent.</p>
-      <div className="flex flex-wrap gap-2">
+      <Lede>Chips from her {pack.shortLabel} pack. Tap what isn’t consistent.</Lede>
+      <div className="mt-8 flex flex-col gap-2">
         {catalog.sharedChips.map((c) => (
-          <Chip key={c.id} selected={selected.includes(c.id)} onClick={() => onToggle(c.id)}>
+          <Chip key={c.id} selected={selected.includes(c.id)} onClick={() => onToggle(c.id)} className="w-full">
             {c.label}
           </Chip>
         ))}
       </div>
       {show.map((ev) => (
         <div key={ev} className="mt-6">
-          <p className="mb-2 text-[11px] uppercase tracking-[0.16em] text-subtle">{ev}</p>
-          <div className="flex flex-wrap gap-2">
+          <p className="mb-2 text-kicker uppercase tracking-kicker text-muted">
+            {EVENTS.find((e) => e.id === ev)?.label ?? ev}
+          </p>
+          <div className="flex flex-col gap-2">
             {(pack.chips[ev] ?? []).map((label) => {
               const key = chipKey(ev, label);
               return (
-                <Chip key={key} selected={selected.includes(key)} onClick={() => onToggle(key)}>
+                <Chip key={key} selected={selected.includes(key)} onClick={() => onToggle(key)} className="w-full">
                   {label}
                 </Chip>
               );
@@ -497,7 +525,6 @@ function Building({
 }) {
   const [pct, setPct] = useState(6);
   const [phase, setPhase] = useState(0);
-  const [count, setCount] = useState(1847 + (Math.floor(Date.now() / 60000) % 90));
   const sent = useRef(false);
   function finish() {
     if (sent.current) return;
@@ -506,8 +533,9 @@ function Building({
   }
 
   useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const t0 = Date.now();
-    const duration = 7200;
+    const duration = reduce ? 400 : 7200;
     const id = window.setInterval(() => {
       const e = Math.min(1, (Date.now() - t0) / duration);
       setPct(Math.round(6 + e * 94));
@@ -518,77 +546,64 @@ function Building({
       if (e > 0.7) setPhase((p) => Math.max(p, 5));
       if (e >= 1) {
         window.clearInterval(id);
-        window.setTimeout(finish, 600);
+        window.setTimeout(finish, reduce ? 0 : 400);
       }
     }, 50);
-    const tick = window.setInterval(() => setCount((n) => n + 1), 1400);
-    return () => {
-      window.clearInterval(id);
-      window.clearInterval(tick);
-    };
+    return () => window.clearInterval(id);
   }, []);
 
+  const quote = phase >= 4 ? PROOF_QUOTES[1] : PROOF_QUOTES[0];
+
   return (
-    <div className="flex min-h-full flex-1 flex-col justify-end px-5 pb-10 pt-12">
-      <PipAside pose="bag">Building the household plan. This part is supposed to take a minute. Breathe.</PipAside>
-      <p className="mt-8 text-[11px] uppercase tracking-[0.18em] text-subtle">Writing her season</p>
-      <h1 className="mt-3 font-display text-[34px] font-medium leading-tight tracking-[-0.03em]">
-        {possessive(draftName || "Her")} plan
-      </h1>
-      <p className="mt-2 text-[14px] text-muted">{facts}</p>
-      <p className="mt-1 text-[13px] text-subtle">{hint}</p>
+    <div className="relative flex min-h-full flex-1 flex-col">
+      <img src="/art/beam.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <div className="hero-scrim absolute inset-0" />
+      <div className="relative z-10 flex min-h-full flex-1 flex-col justify-end px-5 pb-[max(2rem,var(--phone-safe-bottom))] pt-16">
+        <PipAside pose="bag">Building the household plan. This part is supposed to take a minute. Breathe.</PipAside>
+        <p className="mt-8 text-kicker uppercase tracking-kicker text-fg/55">Writing her season</p>
+        <h1 className="mt-3 font-display text-title font-medium leading-title tracking-title">
+          {possessive(draftName || "Her")} plan
+        </h1>
+        <p className="mt-2 text-ui text-fg/75">{facts}</p>
+        <p className="mt-1 text-small text-fg/50">{hint}</p>
 
-      <div className="mt-6 h-[3px] overflow-hidden rounded-full bg-surface-2">
-        <div className="h-full rounded-full bg-accent" style={{ width: `${pct}%` }} />
-      </div>
-      <div className="mt-1 h-[2px] overflow-hidden rounded-full">
-        <div className="shimmer-bar h-full w-full" />
-      </div>
+        <p className="num-hero mt-8 text-price leading-none">{pct}</p>
+        <p className="mt-1 text-kicker uppercase tracking-kicker text-fg/45">percent written</p>
+        <div className="mt-4 h-0.5 overflow-hidden rounded-full bg-fg/10">
+          <div
+            className="h-full origin-left rounded-full bg-accent"
+            style={{ transform: `scaleX(${pct / 100})` }}
+          />
+        </div>
 
-      <div className="mt-6 flex flex-col gap-3">
-        {phase >= 1 && (
-          <div className="proof-in rounded-[22px] bg-surface px-4 py-3 shadow-[0_0_0_1px_rgb(242_238_230/0.08)]">
-            <p className="text-[12px] uppercase tracking-[0.14em] text-subtle">Pattern</p>
-            <p className="mt-1 text-[15px] text-fg">Built for JO + Xcel families — same quiz, different pack.</p>
-          </div>
-        )}
-        {phase >= 2 && (
-          <div className="proof-in flex items-center justify-between">
-            <div className="editors-badge">
-              <span>Today’s pick</span>
-              <span>Season OS</span>
+        <div className="mt-8 min-h-28">
+          {phase >= 1 && phase < 3 && (
+            <p className="proof-in text-body leading-relaxed text-fg/80">
+              Built for JO + Xcel families — same quiz, different pack.
+            </p>
+          )}
+          {phase >= 3 && phase < 5 && <QuoteCard key={quote.a} q={quote.q} a={quote.a} />}
+          {phase >= 5 && (
+            <div className="proof-in">
+              <p className="text-ui leading-relaxed text-fg/80">{proof}</p>
             </div>
-            <p className="max-w-[18ch] text-right text-[12px] leading-snug text-subtle">In-app mark. Not an App Store award.</p>
-          </div>
-        )}
-        {phase >= 3 && (
-          <QuoteCard q={PROOF_QUOTES[0].q} a={PROOF_QUOTES[0].a} />
-        )}
-        {phase >= 4 && (
-          <QuoteCard q={PROOF_QUOTES[1].q} a={PROOF_QUOTES[1].a} />
-        )}
+          )}
+        </div>
         {phase >= 5 && (
-          <div className="proof-in rounded-[22px] bg-surface-2 px-4 py-3">
-            <p className="font-mono text-[22px] tabular">{count.toLocaleString()}</p>
-            <p className="mt-1 text-[12px] text-subtle">households building a plan in this prototype counter — live-ish, not a census.</p>
-            <p className="mt-3 text-[14px] leading-relaxed text-muted">{proof}</p>
-          </div>
+          <Button className="mt-8 w-full" onClick={finish}>
+            See the offer
+          </Button>
         )}
       </div>
-      {phase >= 5 && (
-        <Button className="mt-6 w-full" onClick={finish}>
-          See the offer
-        </Button>
-      )}
     </div>
   );
 }
 
 function QuoteCard({ q, a }: { q: string; a: string }) {
   return (
-    <div className="proof-in rounded-[22px] bg-surface px-4 py-3 shadow-[0_0_0_1px_rgb(242_238_230/0.08)]">
-      <p className="font-display text-[18px] leading-snug tracking-[-0.02em]">“{q}”</p>
-      <p className="mt-2 text-[11px] uppercase tracking-[0.12em] text-subtle">{a}</p>
-    </div>
+    <figure className="proof-in">
+      <blockquote className="font-display text-lg leading-snug tracking-title">“{q}”</blockquote>
+      <figcaption className="mt-2 text-kicker uppercase tracking-kicker text-fg/50">{a}</figcaption>
+    </figure>
   );
 }

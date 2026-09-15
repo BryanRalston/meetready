@@ -1,12 +1,13 @@
 import { createFileRoute, Navigate, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { AppShell } from "@/components/app-shell";
-import { Button, Card, Chip, Field, Label, Sheet } from "@/components/ui";
-import { catalog, packById, packsForProgram } from "@/lib/packs";
+import { GymnastForm } from "@/components/gymnast-form";
+import { Button, Card, Label, Sheet } from "@/components/ui";
+import { packById } from "@/lib/packs";
 import { useHydrated } from "@/lib/hydrated";
-import { emptyDraft, useActiveGymnast, useMeet } from "@/lib/store";
-import { possessive } from "@/lib/utils";
-import type { Draft, ProgramId } from "@/lib/types";
+import { planKindLabel, useActiveGymnast, useMeet } from "@/lib/store";
+import { cn, possessive } from "@/lib/utils";
+import type { Draft, Gymnast } from "@/lib/types";
 
 export const Route = createFileRoute("/family")({ component: Family });
 
@@ -18,10 +19,13 @@ function Family() {
   const active = useActiveGymnast();
   const setActive = useMeet((s) => s.setActive);
   const addGymnast = useMeet((s) => s.addGymnast);
+  const updateGymnast = useMeet((s) => s.updateGymnast);
   const removeGymnast = useMeet((s) => s.removeGymnast);
   const resetAll = useMeet((s) => s.resetAll);
   const planKind = useMeet((s) => s.planKind);
   const [adding, setAdding] = useState(false);
+  const [editing, setEditing] = useState<Gymnast | null>(null);
+  const [resetting, setResetting] = useState(false);
 
   if (!hydrated) {
     return (
@@ -34,155 +38,128 @@ function Family() {
 
   return (
     <AppShell>
-      <header className="pb-5 pt-3">
+      <header className="pb-6 pt-2">
         <Label>Household</Label>
-        <h1 className="mt-1 font-display text-[32px] font-medium tracking-[-0.03em] leading-none">
-          Family
-        </h1>
-        <p className="mt-2 text-[14px] text-muted">
-          One subscription. A plan for each gymnast.
-          {planKind ? ` · ${planKind}` : ""}
+        <h1 className="mt-1 font-display text-title font-medium leading-none tracking-title">Family</h1>
+        <p className="mt-2 text-ui text-muted">
+          One household. A plan for each gymnast.
+          {planKindLabel(planKind) ? ` · ${planKindLabel(planKind)}` : ""}
         </p>
+
       </header>
 
-      <div className="flex flex-col gap-2 pb-4">
+      <div className="flex flex-col gap-2 pb-6">
         {gymnasts.map((g) => {
           const pack = packById(g.packId);
           const on = active?.id === g.id;
           return (
-            <button
-              key={g.id}
-              type="button"
-              onClick={() => {
-                setActive(g.id);
-                navigate({ to: "/home" });
-              }}
-              className="text-left"
-            >
-              <Card className={on ? "bg-fg text-bg" : ""}>
-                <p className={`text-[11px] uppercase tracking-[0.14em] ${on ? "text-bg/60" : "text-subtle"}`}>
-                  {pack?.label ?? g.packId}
-                </p>
-                <h2 className="mt-1 font-display text-[24px] font-medium tracking-[-0.02em]">
-                  {possessive(g.name)} plan
-                </h2>
-                <p className={`mt-1 text-[13px] ${on ? "text-bg/70" : "text-muted"}`}>
-                  {pack?.helper}
-                </p>
+            <Card key={g.id} className={on ? "bg-fg text-bg" : ""}>
+              <p className={cn("text-kicker uppercase tracking-kicker", on ? "text-bg/70" : "text-subtle")}>
+                {pack?.label ?? g.packId}
+              </p>
+              <h2 className="mt-1 font-display text-2xl font-medium tracking-title">{possessive(g.name)} plan</h2>
+              <p className={cn("mt-1 text-small", on ? "text-bg/70" : "text-muted")}>{pack?.helper}</p>
+              <div className="mt-3 flex flex-col gap-1">
+                <button
+                  type="button"
+                  className={cn("press min-h-12 text-left text-meta", on ? "text-bg/70" : "text-muted")}
+                  onClick={() => {
+                    setActive(g.id);
+                    navigate({ to: "/home" });
+                  }}
+                >
+                  Open plan
+                </button>
+                <button
+                  type="button"
+                  className={cn("press min-h-12 text-left text-meta", on ? "text-bg/70" : "text-muted")}
+                  onClick={() => setEditing(g)}
+                >
+                  Edit season
+                </button>
                 {gymnasts.length > 1 && (
                   <button
                     type="button"
-                    className={`mt-3 text-[12px] ${on ? "text-bg/60" : "text-subtle"}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      removeGymnast(g.id);
-                    }}
+                    className={cn("press min-h-12 text-left text-meta", on ? "text-bg/70" : "text-subtle")}
+                    onClick={() => removeGymnast(g.id)}
                   >
                     Remove
                   </button>
                 )}
-              </Card>
-            </button>
+              </div>
+            </Card>
           );
         })}
+
+        <button
+          type="button"
+          onClick={() => navigate({ to: "/features" })}
+          className="press mt-4 text-left"
+        >
+          <Card>
+            <Label>Feature map</Label>
+            <h2 className="mt-1 font-display text-card font-medium tracking-title">What's in MeetReady</h2>
+            <p className="mt-1 text-small text-muted">Current capabilities. Not a roadmap.</p>
+          </Card>
+        </button>
 
         <Button variant="outline" className="mt-2 w-full" onClick={() => setAdding(true)}>
           Add a gymnast
         </Button>
-        <Button
-          variant="ghost"
-          className="w-full"
-          onClick={() => {
-            resetAll();
-            navigate({ to: "/" });
-          }}
-        >
+        <Button variant="ghost" className="w-full" onClick={() => setResetting(true)}>
           Reset this household
         </Button>
       </div>
 
       {adding && (
-        <AddSheet
+        <GymnastForm
+          kicker="Second plan"
+          title="Add a gymnast"
           onClose={() => setAdding(false)}
-          onSave={(d) => {
+          onSave={(d: Draft) => {
             addGymnast(d);
             setAdding(false);
             navigate({ to: "/home" });
           }}
         />
       )}
+      {resetting && (
+        <Sheet onClose={() => setResetting(false)} labelledBy="reset-title">
+          <Label>Household</Label>
+          <h2 id="reset-title" className="mt-1 font-display text-2xl font-medium tracking-title">
+            Reset this household?
+          </h2>
+          <p className="mt-3 text-ui leading-relaxed text-muted">
+            Plans, scores, and packing on this phone go away. This cannot be undone.
+          </p>
+          <Button
+            className="mt-6 w-full"
+            onClick={() => {
+              resetAll();
+              navigate({ to: "/" });
+            }}
+          >
+            Reset
+          </Button>
+          <Button variant="ghost" className="mt-2 w-full" onClick={() => setResetting(false)}>
+            Keep the household
+          </Button>
+        </Sheet>
+      )}
+      {editing && (
+        <GymnastForm
+          kicker="Season"
+          title={`Edit ${editing.name}`}
+          initial={editing}
+          onClose={() => setEditing(null)}
+          onSave={(d: Draft) => {
+            updateGymnast(editing.id, d);
+            setEditing(null);
+            setActive(editing.id);
+            navigate({ to: "/home" });
+          }}
+        />
+      )}
     </AppShell>
-  );
-}
-
-function AddSheet({ onClose, onSave }: { onClose: () => void; onSave: (d: Draft) => void }) {
-  const [d, setD] = useState<Draft>({ ...emptyDraft(), role: "parent" });
-  const packs = d.programId ? packsForProgram(d.programId) : [];
-  const pack = packById(d.packId);
-  const ready = d.name.trim() && d.programId && d.packId && d.goalId;
-
-  return (
-    <Sheet>
-        <Label>Second plan</Label>
-        <h2 className="mt-1 font-display text-[24px] font-medium tracking-[-0.03em]">Add a gymnast</h2>
-        <div className="mt-4 flex flex-col gap-4">
-          <Field label="First name" value={d.name} onChange={(name) => setD({ ...d, name })} placeholder="Maya" />
-          <div>
-            <p className="mb-2 text-[12px] uppercase tracking-[0.14em] text-subtle">Program</p>
-            <div className="flex flex-col gap-2">
-              {catalog.programs.map((p) => (
-                <Chip
-                  key={p.id}
-                  selected={d.programId === p.id}
-                  onClick={() => setD({ ...d, programId: p.id as ProgramId, packId: "", goalId: "" })}
-                  className="w-full"
-                >
-                  {p.label}
-                </Chip>
-              ))}
-            </div>
-          </div>
-          {packs.length > 0 && (
-            <div>
-              <p className="mb-2 text-[12px] uppercase tracking-[0.14em] text-subtle">Level</p>
-              <div className="flex max-h-48 flex-col gap-2 overflow-y-auto">
-                {packs.map((p) => (
-                  <Chip
-                    key={p.id}
-                    selected={d.packId === p.id}
-                    onClick={() => setD({ ...d, packId: p.id, goalId: "" })}
-                    className="w-full"
-                  >
-                    {p.label}
-                  </Chip>
-                ))}
-              </div>
-            </div>
-          )}
-          {pack && (
-            <div>
-              <p className="mb-2 text-[12px] uppercase tracking-[0.14em] text-subtle">Goal</p>
-              <div className="flex flex-col gap-2">
-                {pack.goals.map((g) => (
-                  <Chip
-                    key={g.id}
-                    selected={d.goalId === g.id}
-                    onClick={() => setD({ ...d, goalId: g.id })}
-                    className="w-full"
-                  >
-                    {g.label}
-                  </Chip>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-        <Button className="mt-5 w-full" disabled={!ready} onClick={() => onSave(d)}>
-          Add to household
-        </Button>
-        <Button variant="ghost" className="mt-1 w-full" onClick={onClose}>
-          Cancel
-        </Button>
-    </Sheet>
   );
 }

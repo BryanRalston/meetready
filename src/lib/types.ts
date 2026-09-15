@@ -10,7 +10,9 @@ export type EventId = "vault" | "bars" | "beam" | "floor" | "awards" | "wait";
 
 export type RoleId = "parent" | "gymnast" | "coach";
 
-export type PlanKind = "yearly" | "monthly" | "season" | "trial";
+export type PlanKind = "yearly" | "monthly" | "season" | "trial" | "free";
+
+export type MeetKind = "sanctioned" | "in_house" | "unsure";
 
 export type NumberType =
   | "consistency"
@@ -18,6 +20,8 @@ export type NumberType =
   | "mobility_aa"
   | "mobility_aa_or_ies"
   | "execution"
+  | "execution_composition"
+  | "srs"
   | "decision";
 
 export type Pack = {
@@ -42,6 +46,8 @@ export type Pack = {
     aa: number | null;
     ies: number | null;
     nextLevel?: string;
+    fromDivision?: string;
+    moveUpTarget?: number;
     note: string;
   };
   numberThatMatters: {
@@ -49,6 +55,7 @@ export type Pack = {
     label: string;
     target?: number;
     ies?: number;
+    moveUpTarget?: number;
     example?: string;
   };
   goals: { id: string; label: string }[];
@@ -94,6 +101,7 @@ export type Draft = {
   momentId: string;
   meetDate: string;
   meetName: string;
+  sessionTime: string;
   events: EventId[];
   chips: string[];
   hours: string;
@@ -111,8 +119,10 @@ export type Gymnast = Draft & {
 export type MeetScore = {
   id: string;
   gymnastId: string;
+  packId?: string;
   date: string;
   name: string;
+  meetKind: MeetKind;
   vault: number | null;
   bars: number | null;
   beam: number | null;

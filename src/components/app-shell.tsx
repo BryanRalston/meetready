@@ -1,5 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Shell } from "@/components/ui";
+import { packById } from "@/lib/packs";
+import { useMeet } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
@@ -12,20 +14,44 @@ const NAV = [
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const gymnasts = useMeet((s) => s.gymnasts);
+  const activeId = useMeet((s) => s.activeId);
+  const setActive = useMeet((s) => s.setActive);
   return (
-    <Shell className="px-0">
-      <div className="flex flex-1 flex-col px-5">{children}</div>
-      <nav className="mt-2 grid grid-cols-4 border-t border-border px-2 pt-1">
+    <Shell className="px-0 pb-0">
+      <div className="quiz-scroll flex flex-1 flex-col px-5">{children}</div>
+      {gymnasts.length > 1 && (
+        <div className="flex gap-2 overflow-x-auto px-5 pb-1">
+          {gymnasts.map((g) => {
+            const pack = packById(g.packId);
+            const on = g.id === activeId || (!activeId && g.id === gymnasts[0]?.id);
+            return (
+              <button
+                key={g.id}
+                type="button"
+                onClick={() => setActive(g.id)}
+                className={cn(
+                  "press min-h-12 shrink-0 rounded-md px-3 text-meta",
+                  on ? "bg-fg text-bg" : "bg-navy text-muted shadow-border",
+                )}
+              >
+                {g.name}
+                {pack ? ` · ${pack.shortLabel}` : ""}
+              </button>
+            );
+          })}
+        </div>
+      )}
+      <nav className="tab-dock" aria-label="Season">
         {NAV.map((item) => {
-          const active = pathname === item.to;
+          const active =
+            pathname === item.to || (item.to === "/family" && pathname === "/features");
           return (
             <Link
               key={item.to}
               to={item.to}
-              className={cn(
-                "flex min-h-14 flex-col items-center justify-center gap-1 text-[11px] tracking-wide",
-                active ? "text-fg" : "text-subtle",
-              )}
+              aria-current={active ? "page" : undefined}
+              className={cn("tab-item", active ? "tab-item-on" : "tab-item-off")}
             >
               <item.icon active={active} />
               {item.label}

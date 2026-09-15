@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FamilyRouteImport } from './routes/family'
+import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as MeetRouteImport } from './routes/meet'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
@@ -25,6 +26,11 @@ const IndexRoute = IndexRouteImport.update({
 const FamilyRoute = FamilyRouteImport.update({
   id: '/family',
   path: '/family',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesRoute = FeaturesRouteImport.update({
+  id: '/features',
+  path: '/features',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HomeRoute = HomeRouteImport.update({
@@ -56,6 +62,7 @@ const ScoresRoute = ScoresRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/family': typeof FamilyRoute
+  '/features': typeof FeaturesRoute
   '/home': typeof HomeRoute
   '/meet': typeof MeetRoute
   '/onboarding': typeof OnboardingRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/family': typeof FamilyRoute
+  '/features': typeof FeaturesRoute
   '/home': typeof HomeRoute
   '/meet': typeof MeetRoute
   '/onboarding': typeof OnboardingRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/family': typeof FamilyRoute
+  '/features': typeof FeaturesRoute
   '/home': typeof HomeRoute
   '/meet': typeof MeetRoute
   '/onboarding': typeof OnboardingRoute
@@ -84,14 +93,29 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/family' | '/home' | '/meet' | '/onboarding' | '/paywall' | '/scores'
+    | '/'
+    | '/family'
+    | '/features'
+    | '/home'
+    | '/meet'
+    | '/onboarding'
+    | '/paywall'
+    | '/scores'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/family' | '/home' | '/meet' | '/onboarding' | '/paywall' | '/scores'
+    | '/'
+    | '/family'
+    | '/features'
+    | '/home'
+    | '/meet'
+    | '/onboarding'
+    | '/paywall'
+    | '/scores'
   id:
     | '__root__'
     | '/'
     | '/family'
+    | '/features'
     | '/home'
     | '/meet'
     | '/onboarding'
@@ -102,6 +126,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FamilyRoute: typeof FamilyRoute
+  FeaturesRoute: typeof FeaturesRoute
   HomeRoute: typeof HomeRoute
   MeetRoute: typeof MeetRoute
   OnboardingRoute: typeof OnboardingRoute
@@ -123,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/family'
       fullPath: '/family'
       preLoaderRoute: typeof FamilyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features': {
+      id: '/features'
+      path: '/features'
+      fullPath: '/features'
+      preLoaderRoute: typeof FeaturesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/home': {
@@ -166,6 +198,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FamilyRoute: FamilyRoute,
+  FeaturesRoute: FeaturesRoute,
   HomeRoute: HomeRoute,
   MeetRoute: MeetRoute,
   OnboardingRoute: OnboardingRoute,
