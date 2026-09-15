@@ -15,7 +15,7 @@ import {
 } from "@/lib/packs";
 import { ROLES, useMeet } from "@/lib/store";
 import { personalizedFacts, pipLineForStep, PANIC_OPTIONS } from "@/lib/voice";
-import { cn, daysUntil, possessive } from "@/lib/utils";
+import { asset, cn, daysUntil, possessive } from "@/lib/utils";
 import type { EventId, ProgramId, RoleId } from "@/lib/types";
 
 export const Route = createFileRoute("/onboarding")({ component: Onboarding });
@@ -129,7 +129,7 @@ function Onboarding() {
         {id === "outcome_require" && (
           <Outcome
             n="01"
-            img="/art/beam.jpg"
+            img={asset("/art/beam.jpg")}
             title="You already know the freeze."
             body="She salutes. The beam is four inches. You cannot climb down there. This plan is for the parent in the bleachers."
           />
@@ -137,7 +137,7 @@ function Onboarding() {
         {id === "outcome_meet" && (
           <Outcome
             n="02"
-            img="/art/packing.jpg"
+            img={asset("/art/packing.jpg")}
             title="The bag is the meet."
             body="Leo, grips, gel, the other leo. Pack it the night before so Saturday is not a hunt through the dryer."
           />
@@ -145,7 +145,7 @@ function Onboarding() {
         {id === "outcome_number" && (
           <Outcome
             n="03"
-            img="/art/splash.jpg"
+            img={asset("/art/splash.jpg")}
             title="The number that actually matters."
             body="Not a 10. Not “try your best.” The real mobility number for her level — or the honest note that Levels 1–3 have none."
           />
@@ -556,7 +556,7 @@ function Building({
 
   return (
     <div className="relative flex min-h-full flex-1 flex-col">
-      <img src="/art/beam.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <img src={asset("/art/beam.jpg")} alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="hero-scrim absolute inset-0" />
       <div className="relative z-10 flex min-h-full flex-1 flex-col justify-end px-5 pb-[max(2rem,var(--phone-safe-bottom))] pt-16">
         <PipAside pose="bag">Building the household plan. This part is supposed to take a minute. Breathe.</PipAside>

@@ -6,7 +6,7 @@ import { catalog, packById } from "@/lib/packs";
 import { orderPacking } from "@/lib/plan";
 import { useHydrated } from "@/lib/hydrated";
 import { useActiveGymnast, useMeet } from "@/lib/store";
-import { cn, daysUntil, formatMeetDate, possessive } from "@/lib/utils";
+import { asset, cn, daysUntil, formatMeetDate, possessive } from "@/lib/utils";
 
 export const Route = createFileRoute("/meet")({ component: Meet });
 
@@ -68,7 +68,7 @@ function Meet() {
   return (
     <AppShell>
       <header className="pb-6 pt-2">
-        <img src="/art/packing.jpg" alt="" className="photo mb-4 h-36 w-full rounded-card object-cover" />
+        <img src={asset("/art/packing.jpg")} alt="" className="photo mb-4 h-36 w-full rounded-card object-cover" />
         <Label>Meet week</Label>
         <h1 className="mt-1 font-display text-title font-medium leading-none tracking-title">
           {g.meetName || "Next meet"}

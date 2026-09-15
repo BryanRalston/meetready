@@ -5,6 +5,13 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+/** Public files under Vite BASE_URL so GitHub Pages (/meetready/) loads art. */
+export function asset(path: string) {
+  const base = import.meta.env.BASE_URL || "/";
+  const rel = path.replace(/^\//, "");
+  return `${base}${rel}`.replace(/([^:/])\/{2,}/g, "$1/");
+}
+
 export function possessive(name: string) {
   const n = name.trim() || "Her";
   return /s$/i.test(n) ? `${n}'` : `${n}'s`;

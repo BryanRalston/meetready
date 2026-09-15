@@ -5,7 +5,7 @@ import { catalog, packById } from "@/lib/packs";
 import { buildPlan, numberHero } from "@/lib/plan";
 import { useHydrated } from "@/lib/hydrated";
 import { useActiveGymnast, useMeet } from "@/lib/store";
-import { cn, daysUntil, formatMeetDate, possessive } from "@/lib/utils";
+import { asset, cn, daysUntil, formatMeetDate, possessive } from "@/lib/utils";
 
 export const Route = createFileRoute("/home")({ component: Home });
 
@@ -159,7 +159,7 @@ function Home() {
         {plan.meet && (
           <button type="button" onClick={() => navigate({ to: "/meet" })} className="press text-left">
             <Card className="overflow-hidden p-0">
-              <img src="/art/packing.jpg" alt="" className="photo h-28 w-full object-cover" />
+              <img src={asset("/art/packing.jpg")} alt="" className="photo h-28 w-full object-cover" />
               <div className="p-4">
                 <Label>Meet week</Label>
                 <h2 className="mt-1 font-display text-card font-medium tracking-title">{plan.meet.name}</h2>

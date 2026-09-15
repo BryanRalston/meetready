@@ -4,6 +4,7 @@ import { Button, Shell } from "@/components/ui";
 import { Pip } from "@/components/pip";
 import { useSecretPipTaps } from "@/lib/household-key";
 import { useMeet } from "@/lib/store";
+import { asset } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({ component: Splash });
 
@@ -19,7 +20,7 @@ function Splash() {
 
   return (
     <Shell flush className="relative">
-      <img src="/art/splash.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <img src={asset("/art/splash.jpg")} alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="hero-scrim absolute inset-0" />
       <div className="relative z-10 flex min-h-full flex-1 flex-col justify-end px-5 pb-[max(1.5rem,var(--phone-safe-bottom))] pt-8">
         <div className="mb-auto flex items-start justify-between pt-[max(1rem,var(--phone-safe-top))]">

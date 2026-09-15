@@ -1,10 +1,10 @@
-import { cn } from "@/lib/utils";
+import { asset, cn } from "@/lib/utils";
 
 export const PIP = {
-  idle: "/art/pip.jpg",
-  whisper: "/art/pip-whisper.jpg",
-  warn: "/art/pip-warn.jpg",
-  bag: "/art/pip-bag.jpg",
+  idle: asset("/art/pip.jpg"),
+  whisper: asset("/art/pip-whisper.jpg"),
+  warn: asset("/art/pip-warn.jpg"),
+  bag: asset("/art/pip-bag.jpg"),
 } as const;
 
 export type PipPose = keyof typeof PIP;
