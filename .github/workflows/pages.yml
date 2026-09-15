@@ -1,0 +1,63 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build:pages
+        env:
+          GITHUB_PAGES: "1"
+      - name: Stage Pages artifact
+        run: |
+          if [ -f dist/client/_shell.html ] || [ -f dist/client/index.html ]; then
+            ART=dist/client
+          elif [ -f dist/index.html ]; then
+            ART=dist
+          elif [ -f .output/public/index.html ]; then
+            ART=.output/public
+          else
+            echo "No static index.html found" >&2
+            find dist .output -name '*.html' 2>/dev/null || true
+            exit 1
+          fi
+          if [ ! -f "$ART/index.html" ] && [ -f "$ART/_shell.html" ]; then
+            cp "$ART/_shell.html" "$ART/index.html"
+          fi
+          cp "$ART/index.html" "$ART/404.html"
+          touch "$ART/.nojekyll"
+          echo "artifact=$ART" >> "$GITHUB_OUTPUT"
+        id: stage
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.stage.outputs.artifact }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

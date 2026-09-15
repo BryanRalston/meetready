@@ -2,13 +2,13 @@
   "name": "MeetReady",
   "short_name": "MeetReady",
   "description": "She competes. You run the season.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#0c0c0e",
   "theme_color": "#0c0c0e",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "./favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }
